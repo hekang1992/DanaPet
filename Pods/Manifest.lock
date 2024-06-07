@@ -1,0 +1,119 @@
+PODS:
+  - Alamofire (5.7.1)
+  - AppsFlyerFramework (6.12.3):
+    - AppsFlyerFramework/Main (= 6.12.3)
+  - AppsFlyerFramework/Main (6.12.3)
+  - BRPickerView (2.8.1):
+    - BRPickerView/AddressPickerView (= 2.8.1)
+    - BRPickerView/Base (= 2.8.1)
+    - BRPickerView/DatePickerView (= 2.8.1)
+    - BRPickerView/StringPickerView (= 2.8.1)
+  - BRPickerView/AddressPickerView (2.8.1):
+    - BRPickerView/Base
+  - BRPickerView/Base (2.8.1)
+  - BRPickerView/DatePickerView (2.8.1):
+    - BRPickerView/Base
+  - BRPickerView/StringPickerView (2.8.1):
+    - BRPickerView/Base
+  - DeviceKit (5.2.2)
+  - DGCharts (5.1.0):
+    - DGCharts/Core (= 5.1.0)
+  - DGCharts/Core (5.1.0)
+  - GKCycleScrollView (1.2.2)
+  - HandyJSON (5.0.2)
+  - IQKeyboardManagerSwift (6.5.16)
+  - JXGradientKit (0.0.11)
+  - Kingfisher (7.11.0)
+  - lottie-ios (4.3.4)
+  - MarqueeLabel (4.5.0)
+  - "MBProgressHUD+WJExtension (1.3.1)"
+  - MJRefresh (3.7.6)
+  - ReachabilitySwift (5.0.0)
+  - RxSwift (6.6.0)
+  - SAMKeychain (1.5.3)
+  - SnapKit (5.6.0)
+  - SwipeCellKit (2.7.1)
+  - SystemServices (2.0.1)
+  - TYAlertController (1.2.0)
+  - UIColor_Hex_Swift (5.1.9)
+  - YYText (1.0.7)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.7.1)
+  - AppsFlyerFramework (~> 6.12.3)
+  - BRPickerView (~> 2.8.1)
+  - DeviceKit (~> 5.2.2)
+  - DGCharts (~> 5.1.0)
+  - GKCycleScrollView (~> 1.2.2)
+  - HandyJSON (~> 5.0.2)
+  - IQKeyboardManagerSwift (~> 6.5.16)
+  - JXGradientKit (~> 0.0.11)
+  - Kingfisher (~> 7.11.0)
+  - lottie-ios (~> 4.3.1)
+  - MarqueeLabel (~> 4.5.0)
+  - "MBProgressHUD+WJExtension (~> 1.3.1)"
+  - MJRefresh (~> 3.7.6)
+  - ReachabilitySwift (~> 5.0.0)
+  - RxSwift (~> 6.6.0)
+  - SAMKeychain (~> 1.5.3)
+  - SnapKit (~> 5.6.0)
+  - SwipeCellKit (~> 2.7.1)
+  - SystemServices (~> 2.0.1)
+  - TYAlertController (~> 1.2.0)
+  - UIColor_Hex_Swift (~> 5.1.9)
+  - YYText (~> 1.0.7)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AppsFlyerFramework
+    - BRPickerView
+    - DeviceKit
+    - DGCharts
+    - GKCycleScrollView
+    - HandyJSON
+    - IQKeyboardManagerSwift
+    - JXGradientKit
+    - Kingfisher
+    - lottie-ios
+    - MarqueeLabel
+    - "MBProgressHUD+WJExtension"
+    - MJRefresh
+    - ReachabilitySwift
+    - RxSwift
+    - SAMKeychain
+    - SnapKit
+    - SwipeCellKit
+    - SystemServices
+    - TYAlertController
+    - UIColor_Hex_Swift
+    - YYText
+
+SPEC CHECKSUMS:
+  Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
+  AppsFlyerFramework: fdc5c2fa3a3cfcd62eae58dfba4b8f59c6c77219
+  BRPickerView: 2531a2d4d0fea0b57a1c738de215af0f88863a2f
+  DeviceKit: e36aaf2a0d142ef0b4fac2007649a4414af234be
+  DGCharts: 1c6daf585b6cfc78807af44ea690d357c410627f
+  GKCycleScrollView: ecc033c0d1376f28f7441f0275e9a9d515da9a6f
+  HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
+  IQKeyboardManagerSwift: 12d89768845bb77b55cc092ecc2b1f9370f06b76
+  JXGradientKit: b79a369bedbc501e20ebfda9716cd0b049b02955
+  Kingfisher: b9c985d864d43515f404f1ef4a8ce7d802ace3ac
+  lottie-ios: 3d98679b41fa6fd6aff2352b3953dbd3df8a397e
+  MarqueeLabel: 4b46d196abd253448e830cbd976f9eacc3af0849
+  "MBProgressHUD+WJExtension": 1d9c93951b49e8c711fef6e6089aa6d7d3321192
+  MJRefresh: 2fe7fb43a5167ceda20bb7e63f130c04fd1814a5
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+  RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
+  SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  SwipeCellKit: 3972254a826da74609926daf59b08d6c72e619ea
+  SystemServices: 7af348493ece8951449b476c41532df72569b181
+  TYAlertController: c121090edb0bea7426f987da94cdddd81eef4231
+  UIColor_Hex_Swift: 20cb4e8d51b63e168a9da6933bc5d39cd8fb4ab5
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
+
+PODFILE CHECKSUM: d4f1bf20ad4f6de577ed4ab233c6d55cd0e470bd
+
+COCOAPODS: 1.14.3
