@@ -57,6 +57,8 @@ let Futura_Bold = "Futura-Bold"
 
 let TabBarHeight = 54.pix()
 
+let Coiny_Regular = "Coiny-Regular"
+
 var IS_LOGIN: Bool {
     if let cSonID = USER_DEFAULTS.object(forKey: LOGIN_SEIZES) as? String {
         return !cSonID.isEmpty

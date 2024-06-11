@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow.init(frame: UIScreen.main.bounds)
         noti()
         keyboardManager()
-        //        getFontNames()
+//                getFontNames()
         getPush()
         window?.rootViewController = FristViewController()
         window?.makeKeyAndVisible()
@@ -56,7 +56,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let userInfo = notification.userInfo {
             if let value = userInfo["cleaved"] as? String {
                 if value == "uu" {
-                    window?.rootViewController = TabBarViewController()
+//                    window?.rootViewController = TabBarViewController()
+                    window?.rootViewController = BaseNavViewController(rootViewController: PetViewController())
                 }else{
                     window?.rootViewController = BaseNavViewController(rootViewController: PetViewController())
                 }

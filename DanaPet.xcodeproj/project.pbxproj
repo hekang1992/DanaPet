@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1801FAE62B9AB895002D9F81 /* PopCityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1801FAE52B9AB895002D9F81 /* PopCityView.swift */; };
+		180EFF0E2C1821180037B47B /* HomeAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EFF0D2C1821180037B47B /* HomeAView.swift */; };
+		180EFF102C1821990037B47B /* homeAview.json in Resources */ = {isa = PBXBuildFile; fileRef = 180EFF0F2C1821990037B47B /* homeAview.json */; };
+		180EFF122C182B100037B47B /* Coiny-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 180EFF112C182B100037B47B /* Coiny-Regular.ttf */; };
 		181877262B99A66E00A8C2AA /* PopEnumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181877252B99A66E00A8C2AA /* PopEnumView.swift */; };
 		181877282B99B02700A8C2AA /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181877272B99B02700A8C2AA /* InfoCell.swift */; };
 		181E57C22B9EDDDC002417B3 /* ContractViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E57C12B9EDDDC002417B3 /* ContractViewCell.swift */; };
@@ -88,6 +91,9 @@
 
 /* Begin PBXFileReference section */
 		1801FAE52B9AB895002D9F81 /* PopCityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopCityView.swift; sourceTree = "<group>"; };
+		180EFF0D2C1821180037B47B /* HomeAView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAView.swift; sourceTree = "<group>"; };
+		180EFF0F2C1821990037B47B /* homeAview.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = homeAview.json; sourceTree = "<group>"; };
+		180EFF112C182B100037B47B /* Coiny-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Coiny-Regular.ttf"; sourceTree = "<group>"; };
 		181877252B99A66E00A8C2AA /* PopEnumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopEnumView.swift; sourceTree = "<group>"; };
 		181877272B99B02700A8C2AA /* InfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
 		181E57C12B9EDDDC002417B3 /* ContractViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractViewCell.swift; sourceTree = "<group>"; };
@@ -328,7 +334,7 @@
 		182516302B8C246E00FFEE85 /* DanaPet */ = {
 			isa = PBXGroup;
 			children = (
-				18FF56892C0971940084A032 /* A面 */,
+				18FF56892C0971940084A032 /* ACode */,
 				1825163F2B8C246F00FFEE85 /* Info.plist */,
 				184760F82B8F3AEA0048E257 /* DanaPet.entitlements */,
 				182516652B8C251F00FFEE85 /* Main */,
@@ -609,12 +615,15 @@
 			path = User;
 			sourceTree = "<group>";
 		};
-		18FF56892C0971940084A032 /* A面 */ = {
+		18FF56892C0971940084A032 /* ACode */ = {
 			isa = PBXGroup;
 			children = (
+				180EFF0F2C1821990037B47B /* homeAview.json */,
 				18FF56812C0971940084A032 /* PetViewController.swift */,
+				180EFF0D2C1821180037B47B /* HomeAView.swift */,
+				180EFF112C182B100037B47B /* Coiny-Regular.ttf */,
 			);
-			path = "A面";
+			path = ACode;
 			sourceTree = "<group>";
 		};
 		A63EE135F7A18A87BE77B49F /* Frameworks */ = {
@@ -697,11 +706,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				180EFF102C1821990037B47B /* homeAview.json in Resources */,
 				18FE73DF2BA8258900E4737D /* FuturaMediumItalic.ttf in Resources */,
 				1825163E2B8C246F00FFEE85 /* LaunchScreen.storyboard in Resources */,
 				1825163B2B8C246F00FFEE85 /* Assets.xcassets in Resources */,
 				18FE73DE2BA8258900E4737D /* futuramedium.ttf in Resources */,
 				18A32AA22B95AFFD00CC937D /* loading.json in Resources */,
+				180EFF122C182B100037B47B /* Coiny-Regular.ttf in Resources */,
 				18FE73E02BA8258900E4737D /* futur.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -779,6 +790,7 @@
 				182294602B9054F80045C533 /* JDViewController.swift in Sources */,
 				187670172B9737B1000B256A /* CManager.swift in Sources */,
 				18A32AA72B95DA2400CC937D /* UserFactory.swift in Sources */,
+				180EFF0E2C1821180037B47B /* HomeAView.swift in Sources */,
 				18EF25D42B95623C001DE76B /* LocationManager.swift in Sources */,
 				18FE73D82BA7F1EA00E4737D /* FootOneView.swift in Sources */,
 				1845FD3F2B8CA06300B4BEEF /* CTabBar.swift in Sources */,

@@ -9,6 +9,7 @@
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Coiny-Regular.ttf</string>
 		<string>futur.ttf</string>
 		<string>FuturaMediumItalic.ttf</string>
 		<string>futuramedium.ttf</string>
