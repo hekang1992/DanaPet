@@ -1,6 +1,6 @@
 //
 //  EmptyView.swift
-//  Catatan
+//  DanaPet
 //
 //  Created by apple on 2024/3/13.
 //
@@ -17,7 +17,7 @@ class EmptyView: UIView {
     
     lazy var label1: UILabel = {
         let label1 = UILabel.createLabel(font: UIFont.systemFont(ofSize: 16.pix(), weight: .medium), textColor: UIColor(TITLE_COLOR), textAlignment: .center)
-        label1.text = "Tidak Ada Catatan"
+        label1.text = "Tidak Ada DanaPet"
         return label1
     }()
     

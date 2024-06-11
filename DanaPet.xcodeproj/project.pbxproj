@@ -82,26 +82,9 @@
 		18FE73DE2BA8258900E4737D /* futuramedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18FE73DB2BA8258900E4737D /* futuramedium.ttf */; };
 		18FE73DF2BA8258900E4737D /* FuturaMediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18FE73DC2BA8258900E4737D /* FuturaMediumItalic.ttf */; };
 		18FE73E02BA8258900E4737D /* futur.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18FE73DD2BA8258900E4737D /* futur.ttf */; };
-		18FF56992C0971940084A032 /* OAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FF56812C0971940084A032 /* OAViewController.swift */; };
+		18FF56992C0971940084A032 /* PetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FF56812C0971940084A032 /* PetViewController.swift */; };
 		3B7DE2286B5B95563E053B33 /* Pods_DanaPet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EFDC8879E6CC526C68AAFAF /* Pods_DanaPet.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		182516452B8C246F00FFEE85 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 182516262B8C246E00FFEE85 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1825162D2B8C246E00FFEE85;
-			remoteInfo = Catatan;
-		};
-		1825164F2B8C246F00FFEE85 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 182516262B8C246E00FFEE85 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1825162D2B8C246E00FFEE85;
-			remoteInfo = Catatan;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1801FAE52B9AB895002D9F81 /* PopCityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopCityView.swift; sourceTree = "<group>"; };
@@ -124,8 +107,6 @@
 		1825163A2B8C246F00FFEE85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1825163D2B8C246F00FFEE85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1825163F2B8C246F00FFEE85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		182516442B8C246F00FFEE85 /* DanaPetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DanaPetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1825164E2B8C246F00FFEE85 /* DanaPetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DanaPetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		182516632B8C251800FFEE85 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		182516662B8C254700FFEE85 /* FristViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FristViewController.swift; sourceTree = "<group>"; };
 		182516682B8C258600FFEE85 /* Define.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Define.swift; sourceTree = "<group>"; };
@@ -185,7 +166,7 @@
 		18FE73DB2BA8258900E4737D /* futuramedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = futuramedium.ttf; sourceTree = "<group>"; };
 		18FE73DC2BA8258900E4737D /* FuturaMediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaMediumItalic.ttf; sourceTree = "<group>"; };
 		18FE73DD2BA8258900E4737D /* futur.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = futur.ttf; sourceTree = "<group>"; };
-		18FF56812C0971940084A032 /* OAViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAViewController.swift; sourceTree = "<group>"; };
+		18FF56812C0971940084A032 /* PetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetViewController.swift; sourceTree = "<group>"; };
 		1FD8166289962626B5B2BB54 /* Pods-DanaPet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DanaPet.debug.xcconfig"; path = "Target Support Files/Pods-DanaPet/Pods-DanaPet.debug.xcconfig"; sourceTree = "<group>"; };
 		2026A2E2D59471F7B340DACE /* Pods-Catatan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Catatan.debug.xcconfig"; path = "Target Support Files/Pods-Catatan/Pods-Catatan.debug.xcconfig"; sourceTree = "<group>"; };
 		6EFDC8879E6CC526C68AAFAF /* Pods_DanaPet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DanaPet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,20 +180,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B7DE2286B5B95563E053B33 /* Pods_DanaPet.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		182516412B8C246F00FFEE85 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1825164B2B8C246F00FFEE85 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,8 +321,6 @@
 			isa = PBXGroup;
 			children = (
 				1825162E2B8C246E00FFEE85 /* DanaPet.app */,
-				182516442B8C246F00FFEE85 /* DanaPetTests.xctest */,
-				1825164E2B8C246F00FFEE85 /* DanaPetUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -647,7 +612,7 @@
 		18FF56892C0971940084A032 /* A面 */ = {
 			isa = PBXGroup;
 			children = (
-				18FF56812C0971940084A032 /* OAViewController.swift */,
+				18FF56812C0971940084A032 /* PetViewController.swift */,
 			);
 			path = "A面";
 			sourceTree = "<group>";
@@ -693,42 +658,6 @@
 			productReference = 1825162E2B8C246E00FFEE85 /* DanaPet.app */;
 			productType = "com.apple.product-type.application";
 		};
-		182516432B8C246F00FFEE85 /* DanaPetTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1825165B2B8C246F00FFEE85 /* Build configuration list for PBXNativeTarget "DanaPetTests" */;
-			buildPhases = (
-				182516402B8C246F00FFEE85 /* Sources */,
-				182516412B8C246F00FFEE85 /* Frameworks */,
-				182516422B8C246F00FFEE85 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				182516462B8C246F00FFEE85 /* PBXTargetDependency */,
-			);
-			name = DanaPetTests;
-			productName = CatatanTests;
-			productReference = 182516442B8C246F00FFEE85 /* DanaPetTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		1825164D2B8C246F00FFEE85 /* DanaPetUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1825165E2B8C246F00FFEE85 /* Build configuration list for PBXNativeTarget "DanaPetUITests" */;
-			buildPhases = (
-				1825164A2B8C246F00FFEE85 /* Sources */,
-				1825164B2B8C246F00FFEE85 /* Frameworks */,
-				1825164C2B8C246F00FFEE85 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				182516502B8C246F00FFEE85 /* PBXTargetDependency */,
-			);
-			name = DanaPetUITests;
-			productName = CatatanUITests;
-			productReference = 1825164E2B8C246F00FFEE85 /* DanaPetUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -741,14 +670,6 @@
 				TargetAttributes = {
 					1825162D2B8C246E00FFEE85 = {
 						CreatedOnToolsVersion = 15.2;
-					};
-					182516432B8C246F00FFEE85 = {
-						CreatedOnToolsVersion = 15.2;
-						TestTargetID = 1825162D2B8C246E00FFEE85;
-					};
-					1825164D2B8C246F00FFEE85 = {
-						CreatedOnToolsVersion = 15.2;
-						TestTargetID = 1825162D2B8C246E00FFEE85;
 					};
 				};
 			};
@@ -767,8 +688,6 @@
 			projectRoot = "";
 			targets = (
 				1825162D2B8C246E00FFEE85 /* DanaPet */,
-				182516432B8C246F00FFEE85 /* DanaPetTests */,
-				1825164D2B8C246F00FFEE85 /* DanaPetUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -784,20 +703,6 @@
 				18FE73DE2BA8258900E4737D /* futuramedium.ttf in Resources */,
 				18A32AA22B95AFFD00CC937D /* loading.json in Resources */,
 				18FE73E02BA8258900E4737D /* futur.ttf in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		182516422B8C246F00FFEE85 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1825164C2B8C246F00FFEE85 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -910,7 +815,7 @@
 				18EAFD732BC4EE280060AD2C /* ProductCell.swift in Sources */,
 				18A32AA52B95C86F00CC937D /* SaveLoginInfo.swift in Sources */,
 				1835E0BC2B9087E000C20E0E /* PersonalView.swift in Sources */,
-				18FF56992C0971940084A032 /* OAViewController.swift in Sources */,
+				18FF56992C0971940084A032 /* PetViewController.swift in Sources */,
 				18EF25D62B957704001DE76B /* LocationModel.swift in Sources */,
 				182515E12B98793500783BFD /* CommonCell.swift in Sources */,
 				1825166B2B8C27CF00FFEE85 /* LoginViewController.swift in Sources */,
@@ -923,34 +828,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		182516402B8C246F00FFEE85 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1825164A2B8C246F00FFEE85 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		182516462B8C246F00FFEE85 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1825162D2B8C246E00FFEE85 /* DanaPet */;
-			targetProxy = 182516452B8C246F00FFEE85 /* PBXContainerItemProxy */;
-		};
-		182516502B8C246F00FFEE85 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1825162D2B8C246E00FFEE85 /* DanaPet */;
-			targetProxy = 1825164F2B8C246F00FFEE85 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1825163C2B8C246F00FFEE85 /* LaunchScreen.storyboard */ = {
@@ -1182,84 +1060,6 @@
 			};
 			name = Release;
 		};
-		1825165C2B8C246F00FFEE85 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = INO.CatatanTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DanaPet.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DanaPet";
-			};
-			name = Debug;
-		};
-		1825165D2B8C246F00FFEE85 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = INO.CatatanTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DanaPet.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DanaPet";
-			};
-			name = Release;
-		};
-		1825165F2B8C246F00FFEE85 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = INO.CatatanUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Catatan;
-			};
-			name = Debug;
-		};
-		182516602B8C246F00FFEE85 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = INO.CatatanUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Catatan;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1277,24 +1077,6 @@
 			buildConfigurations = (
 				182516592B8C246F00FFEE85 /* Debug */,
 				1825165A2B8C246F00FFEE85 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1825165B2B8C246F00FFEE85 /* Build configuration list for PBXNativeTarget "DanaPetTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1825165C2B8C246F00FFEE85 /* Debug */,
-				1825165D2B8C246F00FFEE85 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1825165E2B8C246F00FFEE85 /* Build configuration list for PBXNativeTarget "DanaPetUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1825165F2B8C246F00FFEE85 /* Debug */,
-				182516602B8C246F00FFEE85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

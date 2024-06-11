@@ -1,6 +1,6 @@
 //
 //  FaceViewController.swift
-//  Catatan
+//  DanaPet
 //
 //  Created by apple on 2024/2/29.
 //
@@ -248,7 +248,7 @@ class FaceViewController: BaseViewController, UIImagePickerControllerDelegate {
         let bidders = bidders
         let dict = ["lives":lives,"pinched":pinched,"bidders":bidders]
         NetApiWork.shared.uploadImageAPI(params: dict, pageUrl: enoughGiven, method: .post, data: data) { [weak self] baseModel in
-            let edges = baseModel.edges
+            let edges = baseModel.edges ?? ""
             let awess = baseModel.awareness
             if awess == 0 || awess == 00 {
                 let model = JSONDeserializer<HoveredModel>.deserializeFrom(dict: baseModel.hovered)
@@ -262,6 +262,8 @@ class FaceViewController: BaseViewController, UIImagePickerControllerDelegate {
                         self?.getPeropleInfo()
                     }
                 }
+            }else {
+                MBProgressHUD.wj_showPlainText(edges, view: nil)
             }
             self?.removeHudView()
         } errorBlock: { [weak self] error in

@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Catatan
+//  DanaPet
 //
 //  Created by apple on 2024/2/26.
 //
@@ -58,12 +58,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 if value == "uu" {
                     window?.rootViewController = TabBarViewController()
                 }else{
-                    window?.rootViewController = TabBarViewController()
-                    //                    window?.rootViewController = BaseNavViewController(rootViewController: OAViewController())
+                    window?.rootViewController = BaseNavViewController(rootViewController: PetViewController())
                 }
             }
         }else {
-            window?.rootViewController = TabBarViewController()
+            window?.rootViewController = BaseNavViewController(rootViewController: PetViewController())
         }
     }
     
