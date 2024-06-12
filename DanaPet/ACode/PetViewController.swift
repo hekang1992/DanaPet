@@ -20,6 +20,18 @@ class PetViewController: BaseViewController{
         homeView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        
+        homeView.block1 = { [weak self] in
+            self?.nextVc()
+        }
+        
+        homeView.block2 = { [weak self] in
+            self?.nextVc()
+        }
+        
+        homeView.block3 = { [weak self] in
+            self?.nextVc()
+        }
     }
     
     /*
@@ -31,5 +43,15 @@ class PetViewController: BaseViewController{
      // Pass the selected object to the new view controller.
      }
      */
+    
+}
+
+
+extension PetViewController {
+    
+    func nextVc() {
+        let sendVc = SecondController()
+        self.navigationController?.pushViewController(sendVc, animated: true)
+    }
     
 }

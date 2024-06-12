@@ -10,6 +10,12 @@ import Lottie
 import UIColor_Hex_Swift
 
 class HomeAView: UIView {
+    
+    var block1: (() -> Void)?
+    
+    var block2: (() -> Void)?
+    
+    var block3: (() -> Void)?
 
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -48,6 +54,8 @@ class HomeAView: UIView {
     
     lazy var tx: UITextField = {
         let tx = UITextField()
+        tx.delegate = self
+        tx.font = UIFont(name: Coiny_Regular, size: 24.pix())
         let placeholderFont = UIFont(name: Coiny_Regular, size: 20.pix())
         let foregroundColor = UIColor("#ECE2CF")
         let placeholderAttributes: [NSAttributedString.Key: Any] = [
@@ -73,21 +81,21 @@ class HomeAView: UIView {
     lazy var btn: UIButton = {
         let btn = UIButton(type: .custom)
         btn.setImage(UIImage(named: "Sliceaddpet"), for: .normal)
-        btn.addTarget(self, action: #selector(btnPetClick), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(btnPet1Click), for: .touchUpInside)
         return btn
     }()
     
     lazy var btn1: UIButton = {
         let btn = UIButton(type: .custom)
         btn.setImage(UIImage(named: "Sliceaddpet"), for: .normal)
-        btn.addTarget(self, action: #selector(btnPetClick), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(btnPet2Click), for: .touchUpInside)
         return btn
     }()
     
     lazy var btn2: UIButton = {
         let btn = UIButton(type: .custom)
         btn.setImage(UIImage(named: "Slicestartfa"), for: .normal)
-        btn.addTarget(self, action: #selector(btnPetClick), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(btnPet3Click), for: .touchUpInside)
         return btn
     }()
     
@@ -164,11 +172,9 @@ class HomeAView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
 
-
-extension HomeAView {
+extension HomeAView: UITextFieldDelegate {
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -178,7 +184,20 @@ extension HomeAView {
         self.scrollView.contentSize = CGSize(width: 0, height: maxY + 120.pix())
     }
     
-    @objc func btnPetClick() {
-        
+    @objc func btnPet1Click() {
+        self.block1?()
+    }
+    
+    @objc func btnPet2Click() {
+        self.block2?()
+    }
+    
+    @objc func btnPet3Click() {
+        self.block3?()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
