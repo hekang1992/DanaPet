@@ -13,6 +13,10 @@
 		180EFF122C182B100037B47B /* Coiny-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 180EFF112C182B100037B47B /* Coiny-Regular.ttf */; };
 		180EFF142C1846810037B47B /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EFF132C1846810037B47B /* SecondView.swift */; };
 		180EFF162C1850F10037B47B /* SecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EFF152C1850F10037B47B /* SecondController.swift */; };
+		180EFF182C197D230037B47B /* FoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EFF172C197D230037B47B /* FoodView.swift */; };
+		180EFF1A2C197D320037B47B /* WaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EFF192C197D320037B47B /* WaterView.swift */; };
+		180EFF1C2C197D450037B47B /* TreatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EFF1B2C197D450037B47B /* TreatsView.swift */; };
+		180EFF1E2C197D560037B47B /* WalkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EFF1D2C197D560037B47B /* WalkView.swift */; };
 		181877262B99A66E00A8C2AA /* PopEnumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181877252B99A66E00A8C2AA /* PopEnumView.swift */; };
 		181877282B99B02700A8C2AA /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181877272B99B02700A8C2AA /* InfoCell.swift */; };
 		181E57C22B9EDDDC002417B3 /* ContractViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E57C12B9EDDDC002417B3 /* ContractViewCell.swift */; };
@@ -98,6 +102,10 @@
 		180EFF112C182B100037B47B /* Coiny-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Coiny-Regular.ttf"; sourceTree = "<group>"; };
 		180EFF132C1846810037B47B /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
 		180EFF152C1850F10037B47B /* SecondController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondController.swift; sourceTree = "<group>"; };
+		180EFF172C197D230037B47B /* FoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodView.swift; sourceTree = "<group>"; };
+		180EFF192C197D320037B47B /* WaterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterView.swift; sourceTree = "<group>"; };
+		180EFF1B2C197D450037B47B /* TreatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatsView.swift; sourceTree = "<group>"; };
+		180EFF1D2C197D560037B47B /* WalkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkView.swift; sourceTree = "<group>"; };
 		181877252B99A66E00A8C2AA /* PopEnumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopEnumView.swift; sourceTree = "<group>"; };
 		181877272B99B02700A8C2AA /* InfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
 		181E57C12B9EDDDC002417B3 /* ContractViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractViewCell.swift; sourceTree = "<group>"; };
@@ -628,6 +636,10 @@
 				18FF56812C0971940084A032 /* PetViewController.swift */,
 				180EFF132C1846810037B47B /* SecondView.swift */,
 				180EFF152C1850F10037B47B /* SecondController.swift */,
+				180EFF172C197D230037B47B /* FoodView.swift */,
+				180EFF192C197D320037B47B /* WaterView.swift */,
+				180EFF1B2C197D450037B47B /* TreatsView.swift */,
+				180EFF1D2C197D560037B47B /* WalkView.swift */,
 			);
 			path = ACode;
 			sourceTree = "<group>";
@@ -776,6 +788,7 @@
 				1835E0C22B90881400C20E0E /* BankView.swift in Sources */,
 				18EAFD772BC527710060AD2C /* ProductProCell.swift in Sources */,
 				18EF25D82B9596D2001DE76B /* RequestUrl.swift in Sources */,
+				180EFF1A2C197D320037B47B /* WaterView.swift in Sources */,
 				1825166D2B8C27DF00FFEE85 /* LoginView.swift in Sources */,
 				182294622B90550B0045C533 /* JDView.swift in Sources */,
 				18BBD0FA2BA146AB00F3D322 /* OrderView.swift in Sources */,
@@ -784,6 +797,7 @@
 				18BABAFA2BA44E9D004A070E /* HomeOneCell.swift in Sources */,
 				1822945E2B90313F0045C533 /* FaceView.swift in Sources */,
 				1822945A2B9028FC0045C533 /* FaceViewController.swift in Sources */,
+				180EFF182C197D230037B47B /* FoodView.swift in Sources */,
 				1845FD352B8C95F800B4BEEF /* OrderViewController.swift in Sources */,
 				182515D52B98737B00783BFD /* FaceSelectView.swift in Sources */,
 				1835E0BA2B9087CF00C20E0E /* PersonalViewController.swift in Sources */,
@@ -803,6 +817,7 @@
 				180EFF162C1850F10037B47B /* SecondController.swift in Sources */,
 				1822946A2B906E120045C533 /* PopImageView.swift in Sources */,
 				18EAFD7B2BC557D90060AD2C /* FuDaiTableView.swift in Sources */,
+				180EFF1E2C197D560037B47B /* WalkView.swift in Sources */,
 				1835E0C02B90880800C20E0E /* BankViewController.swift in Sources */,
 				184760F72B8EE96D0048E257 /* DeviceInfo.swift in Sources */,
 				1801FAE62B9AB895002D9F81 /* PopCityView.swift in Sources */,
@@ -815,6 +830,7 @@
 				1835E0BE2B9087FE00C20E0E /* ContractViewController.swift in Sources */,
 				1845FD302B8C95D400B4BEEF /* HomeViewController.swift in Sources */,
 				1876701A2B97384A000B256A /* CWebViewController.swift in Sources */,
+				180EFF1C2C197D450037B47B /* TreatsView.swift in Sources */,
 				181E57C42B9F1299002417B3 /* ContactsManager.swift in Sources */,
 				181E57C22B9EDDDC002417B3 /* ContractViewCell.swift in Sources */,
 				1822945C2B902C610045C533 /* CNavView.swift in Sources */,

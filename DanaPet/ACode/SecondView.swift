@@ -9,7 +9,11 @@ import UIKit
 
 class SecondView: UIView {
     
+    var selectedButtons: [[String: Any]] = []
+    
     var block: (() -> Void)?
+    
+    var block1: (([[String: Any]]) -> Void)?
     
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -18,7 +22,7 @@ class SecondView: UIView {
         scrollView.contentInsetAdjustmentBehavior = .never
         return scrollView
     }()
-
+    
     lazy var bgImageView: UIImageView = {
         let bgImageView = UIImageView()
         bgImageView.isUserInteractionEnabled = true
@@ -31,7 +35,7 @@ class SecondView: UIView {
         bgImageView.image = UIImage(named: "Slicrty5hbvc")
         return bgImageView
     }()
-
+    
     lazy var btn: UIButton = {
         let btn = UIButton(type: .custom)
         btn.setImage(UIImage(named: "Slicebackyr"), for: .normal)
@@ -81,6 +85,63 @@ class SecondView: UIView {
         return tx
     }()
     
+    lazy var foodView: FoodView = {
+        let foodView = FoodView()
+        foodView.block = { [weak self] dict in
+            self?.addDictionaryToArr(dict)
+        }
+        foodView.block1 = { [weak self] dict in
+            self?.addDictionaryToArr(dict)
+        }
+        foodView.block2 = { [weak self] dict in
+            self?.addDictionaryToArr(dict)
+        }
+        return foodView
+    }()
+    
+    lazy var waterView: WaterView = {
+        let waterView = WaterView()
+        waterView.block = { [weak self] dict in
+            self?.addDictionaryToArr(dict)
+        }
+        waterView.block1 = { [weak self] dict in
+            self?.addDictionaryToArr(dict)
+        }
+        waterView.block2 = { [weak self] dict in
+            self?.addDictionaryToArr(dict)
+        }
+        return waterView
+    }()
+    
+    lazy var treatView: TreatsView = {
+        let treatView = TreatsView()
+        treatView.block = { [weak self] dict in
+            self?.addDictionaryToArr(dict)
+        }
+        treatView.block1 = { [weak self] dict in
+            self?.addDictionaryToArr(dict)
+        }
+        return treatView
+    }()
+    
+    lazy var walkView: WalkView = {
+        let walkView = WalkView()
+        walkView.block = { [weak self] dict in
+            self?.addDictionaryToArr(dict)
+        }
+        walkView.block1 = { [weak self] dict in
+            self?.addDictionaryToArr(dict)
+        }
+        return walkView
+    }()
+    
+    lazy var saveBtn: UIButton = {
+        let saveBtn = UIButton(type: .custom)
+        saveBtn.setImage(UIImage(named: "Slicefadq"), for: .normal)
+        saveBtn.addTarget(self, action: #selector(saveBtnClick), for: .touchUpInside)
+        return saveBtn
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(scrollView)
@@ -92,6 +153,11 @@ class SecondView: UIView {
         scrollView.addSubview(bgImage1View)
         bgImageView.addSubview(bgImage2View)
         bgImage2View.addSubview(tx)
+        scrollView.addSubview(foodView)
+        scrollView.addSubview(waterView)
+        scrollView.addSubview(treatView)
+        scrollView.addSubview(walkView)
+        scrollView.addSubview(saveBtn)
         scrollView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
@@ -132,6 +198,32 @@ class SecondView: UIView {
         tx.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        foodView.snp.makeConstraints { make in
+            make.left.right.equalToSuperview()
+            make.top.equalTo(bgImage1View.snp.top).offset(30.pix())
+            make.height.equalTo(466.pix())
+        }
+        waterView.snp.makeConstraints { make in
+            make.left.right.equalToSuperview()
+            make.top.equalTo(foodView.snp.bottom).offset(30.pix())
+            make.height.equalTo(466.pix())
+        }
+        treatView.snp.makeConstraints { make in
+            make.left.right.equalToSuperview()
+            make.top.equalTo(waterView.snp.bottom).offset(30.pix())
+            make.height.equalTo(280.pix())
+        }
+        walkView.snp.makeConstraints { make in
+            make.left.right.equalToSuperview()
+            make.top.equalTo(treatView.snp.bottom).offset(30.pix())
+            make.height.equalTo(340.pix())
+        }
+        saveBtn.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.left.equalToSuperview().offset(20.pix())
+            make.top.equalTo(walkView.snp.bottom).offset(40.pix())
+            make.height.equalTo(73.pix())
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -142,8 +234,31 @@ class SecondView: UIView {
 
 extension SecondView {
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.saveBtn.setNeedsLayout()
+        self.layoutIfNeeded()
+        let maxY = CGRectGetMaxY(self.saveBtn.frame)
+        self.scrollView.contentSize = CGSize(width: 0, height: maxY + 40.pix())
+    }
+    
     @objc func backClick() {
         self.block?()
+    }
+    
+    @objc func saveBtnClick() {
+        self.block1?(selectedButtons)
+    }
+    
+    func addDictionaryToArr(_ dictionary: [String: Any]) {
+        // 检查数组中是否已经存在相同 key 的字典
+        if let existingIndex = selectedButtons.firstIndex(where: { $0.keys == dictionary.keys }) {
+            // 如果存在，则替换为最新的字典
+            selectedButtons[existingIndex] = dictionary
+        } else {
+            // 如果不存在，则直接添加到数组中
+            selectedButtons.append(dictionary)
+        }
     }
     
 }

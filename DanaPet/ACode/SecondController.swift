@@ -23,20 +23,18 @@ class SecondController: BaseViewController {
         sendView.block = { [weak self] in
             self?.navigationController?.popToRootViewController(animated: true)
         }
+        sendView.block1 = { [weak self] array in
+            self?.saveClick(array)
+        }
         sendView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }
+}
+
+extension SecondController {
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func saveClick(_ array: [[String: Any]]) {
+        print("array>>>>>>>>\(array)")
     }
-    */
-
 }
