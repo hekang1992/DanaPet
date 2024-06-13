@@ -26,6 +26,13 @@ class SecondController: BaseViewController {
         sendView.block1 = { [weak self] array in
             self?.saveClick(array)
         }
+        sendView.block2 = { [weak self] in
+            let gerenVc = FourViewController()
+            self?.navigationController?.pushViewController(gerenVc, animated: true)
+        }
+        sendView.block3 = { [weak self] in
+            
+        }
         sendView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }

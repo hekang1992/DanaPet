@@ -72,6 +72,8 @@
 		18BBD1022BA17CD000F3D322 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BBD1012BA17CD000F3D322 /* EmptyView.swift */; };
 		18C789D72C1A8B4100FE6A00 /* ThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C789D62C1A8B4100FE6A00 /* ThreeViewController.swift */; };
 		18C789D92C1A8C4200FE6A00 /* ThreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C789D82C1A8C4200FE6A00 /* ThreeView.swift */; };
+		18C789DB2C1AAD7700FE6A00 /* FourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C789DA2C1AAD7700FE6A00 /* FourViewController.swift */; };
+		18C789DD2C1AAD8300FE6A00 /* FourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C789DC2C1AAD8300FE6A00 /* FourView.swift */; };
 		18DCD83D2B91C64E009E8A6B /* ExitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DCD83C2B91C64E009E8A6B /* ExitView.swift */; };
 		18DCD83F2B91CE4D009E8A6B /* DeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DCD83E2B91CE4D009E8A6B /* DeleteView.swift */; };
 		18E9ACFC2B8F3F2900DC16A3 /* NetApiWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E9ACFB2B8F3F2900DC16A3 /* NetApiWork.swift */; };
@@ -167,6 +169,8 @@
 		18BBD1012BA17CD000F3D322 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		18C789D62C1A8B4100FE6A00 /* ThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeViewController.swift; sourceTree = "<group>"; };
 		18C789D82C1A8C4200FE6A00 /* ThreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeView.swift; sourceTree = "<group>"; };
+		18C789DA2C1AAD7700FE6A00 /* FourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourViewController.swift; sourceTree = "<group>"; };
+		18C789DC2C1AAD8300FE6A00 /* FourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourView.swift; sourceTree = "<group>"; };
 		18DCD83C2B91C64E009E8A6B /* ExitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitView.swift; sourceTree = "<group>"; };
 		18DCD83E2B91CE4D009E8A6B /* DeleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteView.swift; sourceTree = "<group>"; };
 		18E9ACFB2B8F3F2900DC16A3 /* NetApiWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetApiWork.swift; sourceTree = "<group>"; };
@@ -646,6 +650,8 @@
 				180EFF1D2C197D560037B47B /* WalkView.swift */,
 				18C789D62C1A8B4100FE6A00 /* ThreeViewController.swift */,
 				18C789D82C1A8C4200FE6A00 /* ThreeView.swift */,
+				18C789DA2C1AAD7700FE6A00 /* FourViewController.swift */,
+				18C789DC2C1AAD8300FE6A00 /* FourView.swift */,
 			);
 			path = ACode;
 			sourceTree = "<group>";
@@ -852,12 +858,14 @@
 				1835E0B52B90849300C20E0E /* CameraView.swift in Sources */,
 				184760F52B8EDD350048E257 /* NetworkManager.swift in Sources */,
 				18E9ACFE2B8F48DC00DC16A3 /* CommonParams.swift in Sources */,
+				18C789DB2C1AAD7700FE6A00 /* FourViewController.swift in Sources */,
 				186BD4A52BAD64F200C130A9 /* BankListView.swift in Sources */,
 				18F95BFF2B91AD41005273A2 /* AboutViewController.swift in Sources */,
 				1845FD2C2B8C959F00B4BEEF /* TabBarViewController.swift in Sources */,
 				18EAFD732BC4EE280060AD2C /* ProductCell.swift in Sources */,
 				18A32AA52B95C86F00CC937D /* SaveLoginInfo.swift in Sources */,
 				1835E0BC2B9087E000C20E0E /* PersonalView.swift in Sources */,
+				18C789DD2C1AAD8300FE6A00 /* FourView.swift in Sources */,
 				18FF56992C0971940084A032 /* PetViewController.swift in Sources */,
 				18EF25D62B957704001DE76B /* LocationModel.swift in Sources */,
 				182515E12B98793500783BFD /* CommonCell.swift in Sources */,

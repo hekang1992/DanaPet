@@ -15,6 +15,10 @@ class SecondView: UIView {
     
     var block1: (([[String: Any]]) -> Void)?
     
+    var block2: (() -> Void)?
+    
+    var block3: (() -> Void)?
+    
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.showsVerticalScrollIndicator = false
@@ -43,15 +47,23 @@ class SecondView: UIView {
         return btn
     }()
     
-    lazy var rightBtn: UIButton = {
+    lazy var naozhongBtn: UIButton = {
+        let btn = UIButton(type: .custom)
+        btn.setImage(UIImage(named: "Sliceren"), for: .normal)
+        btn.addTarget(self, action: #selector(naozhongClick), for: .touchUpInside)
+        return btn
+    }()
+    
+    lazy var peopleBtn: UIButton = {
         let btn = UIButton(type: .custom)
         btn.setImage(UIImage(named: "Slicerilifadf"), for: .normal)
-        btn.addTarget(self, action: #selector(backClick), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(gerenClick), for: .touchUpInside)
         return btn
     }()
     
     lazy var pbtn: UIButton = {
         let btn = UIButton(type: .custom)
+        
         btn.setImage(UIImage(named: "Sliceleftw"), for: .normal)
         btn.addTarget(self, action: #selector(backClick), for: .touchUpInside)
         return btn
@@ -147,7 +159,8 @@ class SecondView: UIView {
         addSubview(scrollView)
         scrollView.addSubview(bgImageView)
         bgImageView.addSubview(btn)
-        bgImageView.addSubview(rightBtn)
+        bgImageView.addSubview(naozhongBtn)
+        bgImageView.addSubview(peopleBtn)
         bgImageView.addSubview(pbtn)
         bgImageView.addSubview(ibtn)
         scrollView.addSubview(bgImage1View)
@@ -175,9 +188,14 @@ class SecondView: UIView {
             make.left.equalToSuperview().offset(10.pix())
             make.top.equalToSuperview().offset(44.pix())
         }
-        rightBtn.snp.makeConstraints { make in
+        naozhongBtn.snp.makeConstraints { make in
             make.top.equalTo(btn.snp.top)
             make.right.equalToSuperview().offset(-20.pix())
+            make.size.equalTo(CGSize(width: 44.pix(), height: 44.pix()))
+        }
+        peopleBtn.snp.makeConstraints { make in
+            make.right.equalTo(naozhongBtn.snp.left).offset(-10.pix())
+            make.top.equalTo(btn.snp.top)
             make.size.equalTo(CGSize(width: 44.pix(), height: 44.pix()))
         }
         pbtn.snp.makeConstraints { make in
@@ -248,6 +266,14 @@ extension SecondView {
     
     @objc func saveBtnClick() {
         self.block1?(selectedButtons)
+    }
+    
+    @objc func naozhongClick() {
+        self.block2?()
+    }
+    
+    @objc func gerenClick() {
+        self.block3?()
     }
     
     func addDictionaryToArr(_ dictionary: [String: Any]) {
