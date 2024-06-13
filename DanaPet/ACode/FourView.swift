@@ -11,6 +11,14 @@ class FourView: UIView {
     
     var block: (() -> Void)?
     
+    lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.contentInsetAdjustmentBehavior = .never
+        return scrollView
+    }()
+    
     lazy var bgImageView: UIImageView = {
         let bgImageView = UIImageView()
         bgImageView.isUserInteractionEnabled = true
@@ -24,6 +32,12 @@ class FourView: UIView {
         return bgImageView
     }()
     
+    lazy var bgImage2View: UIImageView = {
+        let bgImageView = UIImageView()
+        bgImageView.image = UIImage(named: "Slicfdasfdsybhfv")
+        return bgImageView
+    }()
+    
     lazy var btn: UIButton = {
         let btn = UIButton(type: .custom)
         btn.setImage(UIImage(named: "Slicebackyr"), for: .normal)
@@ -31,16 +45,26 @@ class FourView: UIView {
         return btn
     }()
     
-    
+    lazy var nameLabel: UILabel = {
+        let nameLabel = UILabel.createLabel(font: UIFont(name: Coiny_Regular, size: 24.pix())!, textColor: UIColor("#313131"), textAlignment: .center)
+        nameLabel.text = "Profile"
+        return nameLabel
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addSubview(bgImageView)
+        addSubview(scrollView)
+        scrollView.addSubview(bgImageView)
+        bgImageView.addSubview(bgImage2View)
         bgImageView.addSubview(btn)
-        addSubview(bgImage1View)
+        bgImageView.addSubview(nameLabel)
+        scrollView.addSubview(bgImage1View)
+        scrollView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
         bgImageView.snp.makeConstraints { make in
             make.left.right.top.equalToSuperview()
-            make.height.equalTo(340.pix())
+            make.height.equalTo(300.pix())
         }
         bgImage1View.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
@@ -52,7 +76,16 @@ class FourView: UIView {
             make.left.equalToSuperview().offset(10.pix())
             make.top.equalToSuperview().offset(44.pix())
         }
-        
+        nameLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalTo(btn.snp.centerY)
+            make.height.equalTo(25.pix())
+        }
+        bgImage2View.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.size.equalTo(CGSize(width: 231.pix(), height: 127.pix()))
+            make.bottom.equalToSuperview().offset(-30.pix())
+        }
     }
     
     required init?(coder: NSCoder) {
