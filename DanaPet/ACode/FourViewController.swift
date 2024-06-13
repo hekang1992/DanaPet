@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import MBProgressHUD_WJExtension
+import TYAlertController
 
 class FourViewController: BaseViewController {
     
@@ -23,6 +25,21 @@ class FourViewController: BaseViewController {
         fourView.block = { [weak self] in
             self?.navigationController?.popViewController(animated: true)
         }
+        fourView.block1 = { [weak self] in
+            self?.navigationController?.popToRootViewController(animated: true)
+        }
+        fourView.block2 = { [weak self] in
+            
+        }
+        fourView.block3 = { [weak self] in
+            
+        }
+        fourView.block4 = { [weak self] in
+            self?.deleView()
+        }
+        fourView.block5 = { [weak self] in
+            self?.logoView()
+        }
         fourView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
@@ -39,4 +56,50 @@ class FourViewController: BaseViewController {
     }
     */
 
+}
+
+extension FourViewController {
+    
+    @objc func deleView() {
+        let popView = APopDelView(frame: self.view.bounds)
+        popView.mainLabel.text = "Cannot be recovered after deletion. Are you sure you want to delete?"
+        let alertVC = TYAlertController(alert: popView, preferredStyle: .alert)
+        self.present(alertVC!, animated: true)
+        popView.block = { [weak self] in
+            self?.delay(1.0, closure: {
+                self?.dismiss(animated: true, completion: {
+                    self?.deleApi()
+                })
+            })
+        }
+        popView.block1 = { [weak self] in
+            self?.dismiss(animated: true)
+        }
+    }
+    
+    @objc func logoView() {
+        let popView = APopDelView(frame: self.view.bounds)
+        popView.mainLabel.text = "Are you sure you want to log out?"
+        let alertVC = TYAlertController(alert: popView, preferredStyle: .alert)
+        self.present(alertVC!, animated: true)
+        popView.block = { [weak self] in
+            self?.delay(1.0, closure: {
+                self?.dismiss(animated: true, completion: {
+                    self?.logoApi()
+                })
+            })
+        }
+        popView.block1 = { [weak self] in
+            self?.dismiss(animated: true)
+        }
+    }
+
+    func deleApi() {
+        
+    }
+    
+    func logoApi() {
+        
+    }
+    
 }

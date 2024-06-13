@@ -74,6 +74,7 @@
 		18C789D92C1A8C4200FE6A00 /* ThreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C789D82C1A8C4200FE6A00 /* ThreeView.swift */; };
 		18C789DB2C1AAD7700FE6A00 /* FourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C789DA2C1AAD7700FE6A00 /* FourViewController.swift */; };
 		18C789DD2C1AAD8300FE6A00 /* FourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C789DC2C1AAD8300FE6A00 /* FourView.swift */; };
+		18C789DF2C1AE4E100FE6A00 /* APopDelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C789DE2C1AE4E100FE6A00 /* APopDelView.swift */; };
 		18DCD83D2B91C64E009E8A6B /* ExitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DCD83C2B91C64E009E8A6B /* ExitView.swift */; };
 		18DCD83F2B91CE4D009E8A6B /* DeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DCD83E2B91CE4D009E8A6B /* DeleteView.swift */; };
 		18E9ACFC2B8F3F2900DC16A3 /* NetApiWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E9ACFB2B8F3F2900DC16A3 /* NetApiWork.swift */; };
@@ -171,6 +172,7 @@
 		18C789D82C1A8C4200FE6A00 /* ThreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeView.swift; sourceTree = "<group>"; };
 		18C789DA2C1AAD7700FE6A00 /* FourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourViewController.swift; sourceTree = "<group>"; };
 		18C789DC2C1AAD8300FE6A00 /* FourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourView.swift; sourceTree = "<group>"; };
+		18C789DE2C1AE4E100FE6A00 /* APopDelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APopDelView.swift; sourceTree = "<group>"; };
 		18DCD83C2B91C64E009E8A6B /* ExitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitView.swift; sourceTree = "<group>"; };
 		18DCD83E2B91CE4D009E8A6B /* DeleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteView.swift; sourceTree = "<group>"; };
 		18E9ACFB2B8F3F2900DC16A3 /* NetApiWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetApiWork.swift; sourceTree = "<group>"; };
@@ -652,6 +654,7 @@
 				18C789D82C1A8C4200FE6A00 /* ThreeView.swift */,
 				18C789DA2C1AAD7700FE6A00 /* FourViewController.swift */,
 				18C789DC2C1AAD8300FE6A00 /* FourView.swift */,
+				18C789DE2C1AE4E100FE6A00 /* APopDelView.swift */,
 			);
 			path = ACode;
 			sourceTree = "<group>";
@@ -808,6 +811,7 @@
 				18EAFD792BC553730060AD2C /* FuDaiViewController.swift in Sources */,
 				1845FD372B8C985600B4BEEF /* BaseNavViewController.swift in Sources */,
 				18BABAFA2BA44E9D004A070E /* HomeOneCell.swift in Sources */,
+				18C789DF2C1AE4E100FE6A00 /* APopDelView.swift in Sources */,
 				1822945E2B90313F0045C533 /* FaceView.swift in Sources */,
 				1822945A2B9028FC0045C533 /* FaceViewController.swift in Sources */,
 				180EFF182C197D230037B47B /* FoodView.swift in Sources */,
