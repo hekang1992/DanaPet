@@ -70,6 +70,8 @@
 		18BBD0FA2BA146AB00F3D322 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BBD0F92BA146AB00F3D322 /* OrderView.swift */; };
 		18BBD0FC2BA146C300F3D322 /* OrderNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BBD0FB2BA146C300F3D322 /* OrderNormalCell.swift */; };
 		18BBD1022BA17CD000F3D322 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BBD1012BA17CD000F3D322 /* EmptyView.swift */; };
+		18C789D72C1A8B4100FE6A00 /* ThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C789D62C1A8B4100FE6A00 /* ThreeViewController.swift */; };
+		18C789D92C1A8C4200FE6A00 /* ThreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C789D82C1A8C4200FE6A00 /* ThreeView.swift */; };
 		18DCD83D2B91C64E009E8A6B /* ExitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DCD83C2B91C64E009E8A6B /* ExitView.swift */; };
 		18DCD83F2B91CE4D009E8A6B /* DeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DCD83E2B91CE4D009E8A6B /* DeleteView.swift */; };
 		18E9ACFC2B8F3F2900DC16A3 /* NetApiWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E9ACFB2B8F3F2900DC16A3 /* NetApiWork.swift */; };
@@ -163,6 +165,8 @@
 		18BBD0F92BA146AB00F3D322 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		18BBD0FB2BA146C300F3D322 /* OrderNormalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderNormalCell.swift; sourceTree = "<group>"; };
 		18BBD1012BA17CD000F3D322 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		18C789D62C1A8B4100FE6A00 /* ThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeViewController.swift; sourceTree = "<group>"; };
+		18C789D82C1A8C4200FE6A00 /* ThreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeView.swift; sourceTree = "<group>"; };
 		18DCD83C2B91C64E009E8A6B /* ExitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitView.swift; sourceTree = "<group>"; };
 		18DCD83E2B91CE4D009E8A6B /* DeleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteView.swift; sourceTree = "<group>"; };
 		18E9ACFB2B8F3F2900DC16A3 /* NetApiWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetApiWork.swift; sourceTree = "<group>"; };
@@ -640,6 +644,8 @@
 				180EFF192C197D320037B47B /* WaterView.swift */,
 				180EFF1B2C197D450037B47B /* TreatsView.swift */,
 				180EFF1D2C197D560037B47B /* WalkView.swift */,
+				18C789D62C1A8B4100FE6A00 /* ThreeViewController.swift */,
+				18C789D82C1A8C4200FE6A00 /* ThreeView.swift */,
 			);
 			path = ACode;
 			sourceTree = "<group>";
@@ -785,6 +791,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				187670152B970AC8000B256A /* UIViewController+Extension.swift in Sources */,
+				18C789D92C1A8C4200FE6A00 /* ThreeView.swift in Sources */,
 				1835E0C22B90881400C20E0E /* BankView.swift in Sources */,
 				18EAFD772BC527710060AD2C /* ProductProCell.swift in Sources */,
 				18EF25D82B9596D2001DE76B /* RequestUrl.swift in Sources */,
@@ -841,6 +848,7 @@
 				18A32AA02B95AECA00CC937D /* HudView.swift in Sources */,
 				18F95BFB2B91848E005273A2 /* ProfileView.swift in Sources */,
 				18F95C012B91AE1E005273A2 /* AboutView.swift in Sources */,
+				18C789D72C1A8B4100FE6A00 /* ThreeViewController.swift in Sources */,
 				1835E0B52B90849300C20E0E /* CameraView.swift in Sources */,
 				184760F52B8EDD350048E257 /* NetworkManager.swift in Sources */,
 				18E9ACFE2B8F48DC00DC16A3 /* CommonParams.swift in Sources */,

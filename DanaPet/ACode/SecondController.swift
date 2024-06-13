@@ -36,5 +36,7 @@ extension SecondController {
     
     @objc func saveClick(_ array: [[String: Any]]) {
         print("array>>>>>>>>\(array)")
+        let threeVc = ThreeViewController()
+        self.navigationController?.pushViewController(threeVc, animated: true)
     }
 }
