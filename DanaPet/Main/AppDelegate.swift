@@ -56,16 +56,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let userInfo = notification.userInfo {
             if let value = userInfo["cleaved"] as? String {
                 if value == "uu" {
-                    window?.rootViewController = TabBarViewController()
-//                    window?.rootViewController = BaseNavViewController(rootViewController: PetViewController())
+//                    window?.rootViewController = TabBarViewController()
+                    window?.rootViewController = BaseNavViewController(rootViewController: PetViewController())
                 }else{
-//                    window?.rootViewController = BaseNavViewController(rootViewController: PetViewController())
-                    window?.rootViewController = TabBarViewController()
+                    window?.rootViewController = BaseNavViewController(rootViewController: PetViewController())
+//                    window?.rootViewController = TabBarViewController()
                 }
             }
         }else {
-//            window?.rootViewController = BaseNavViewController(rootViewController: PetViewController())
-            window?.rootViewController = TabBarViewController()
+            window?.rootViewController = BaseNavViewController(rootViewController: PetViewController())
+//            window?.rootViewController = TabBarViewController()
         }
     }
     

@@ -22,16 +22,22 @@ class PetViewController: BaseViewController{
         }
         
         homeView.block1 = { [weak self] in
-            self?.nextVc()
+            if IS_LOGIN {
+                self?.nextVc()
+            }else {
+                self?.loginVc()
+            }
+            
         }
         
         homeView.block2 = { [weak self] in
-            self?.nextVc()
+            if IS_LOGIN {
+                self?.nextVc()
+            }else {
+                self?.loginVc()
+            }
         }
         
-        homeView.block3 = { [weak self] in
-            self?.nextVc()
-        }
     }
     
     /*
@@ -52,6 +58,11 @@ extension PetViewController {
     func nextVc() {
         let sendVc = SecondController()
         self.navigationController?.pushViewController(sendVc, animated: true)
+    }
+    
+    func loginVc() {
+        let loginVc = PetLoginController()
+        self.navigationController?.pushViewController(loginVc, animated: true)
     }
     
 }

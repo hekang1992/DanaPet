@@ -14,8 +14,6 @@ class HomeAView: UIView {
     var block1: (() -> Void)?
     
     var block2: (() -> Void)?
-    
-    var block3: (() -> Void)?
 
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -78,24 +76,17 @@ class HomeAView: UIView {
         return nameLabel
     }()
     
-    lazy var btn: UIButton = {
+    lazy var btn1: UIButton = {
         let btn = UIButton(type: .custom)
         btn.setImage(UIImage(named: "Sliceaddpet"), for: .normal)
         btn.addTarget(self, action: #selector(btnPet1Click), for: .touchUpInside)
         return btn
     }()
     
-    lazy var btn1: UIButton = {
-        let btn = UIButton(type: .custom)
-        btn.setImage(UIImage(named: "Sliceaddpet"), for: .normal)
-        btn.addTarget(self, action: #selector(btnPet2Click), for: .touchUpInside)
-        return btn
-    }()
-    
     lazy var btn2: UIButton = {
         let btn = UIButton(type: .custom)
         btn.setImage(UIImage(named: "Slicestartfa"), for: .normal)
-        btn.addTarget(self, action: #selector(btnPet3Click), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(btnPet2Click), for: .touchUpInside)
         return btn
     }()
     
@@ -110,7 +101,6 @@ class HomeAView: UIView {
         iconImageView.addSubview(tx)
         hudView.addSubview(icon2ImageView)
         icon2ImageView.addSubview(name1Label)
-        scrollView.addSubview(btn)
         scrollView.addSubview(btn1)
         scrollView.addSubview(btn2)
         
@@ -152,13 +142,8 @@ class HomeAView: UIView {
             make.bottom.equalToSuperview().offset(-10.pix())
             make.size.equalTo(CGSize(width: 200.pix(), height: 23.pix()))
         }
-        btn.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(icon2ImageView.snp.bottom).offset(22.pix())
-            make.size.equalTo(CGSize(width: 335.pix(), height: 73.pix()))
-        }
         btn1.snp.makeConstraints { make in
-            make.top.equalTo(btn.snp.bottom).offset(20.pix())
+            make.top.equalTo(icon2ImageView.snp.bottom).offset(22.pix())
             make.centerX.equalToSuperview()
             make.size.equalTo(CGSize(width: 335.pix(), height: 73.pix()))
         }
@@ -181,7 +166,7 @@ extension HomeAView: UITextFieldDelegate {
         self.btn2.setNeedsLayout()
         self.layoutIfNeeded()
         let maxY = CGRectGetMaxY(self.btn2.frame)
-        self.scrollView.contentSize = CGSize(width: 0, height: maxY + 120.pix())
+        self.scrollView.contentSize = CGSize(width: 0, height: maxY + 40.pix())
     }
     
     @objc func btnPet1Click() {
@@ -190,10 +175,6 @@ extension HomeAView: UITextFieldDelegate {
     
     @objc func btnPet2Click() {
         self.block2?()
-    }
-    
-    @objc func btnPet3Click() {
-        self.block3?()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

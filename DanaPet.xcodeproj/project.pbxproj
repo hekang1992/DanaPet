@@ -61,6 +61,8 @@
 		187670152B970AC8000B256A /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187670142B970AC8000B256A /* UIViewController+Extension.swift */; };
 		187670172B9737B1000B256A /* CManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187670162B9737B1000B256A /* CManager.swift */; };
 		1876701A2B97384A000B256A /* CWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187670192B97384A000B256A /* CWebViewController.swift */; };
+		188C9E502C1BF83D002438D2 /* PetLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188C9E4F2C1BF83D002438D2 /* PetLoginView.swift */; };
+		188C9E522C1BF84E002438D2 /* PetLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188C9E512C1BF84E002438D2 /* PetLoginController.swift */; };
 		18A32AA02B95AECA00CC937D /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A32A9F2B95AECA00CC937D /* HudView.swift */; };
 		18A32AA22B95AFFD00CC937D /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 18A32AA12B95AFFD00CC937D /* loading.json */; };
 		18A32AA52B95C86F00CC937D /* SaveLoginInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A32AA42B95C86F00CC937D /* SaveLoginInfo.swift */; };
@@ -158,6 +160,8 @@
 		187670142B970AC8000B256A /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		187670162B9737B1000B256A /* CManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CManager.swift; sourceTree = "<group>"; };
 		187670192B97384A000B256A /* CWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CWebViewController.swift; sourceTree = "<group>"; };
+		188C9E4F2C1BF83D002438D2 /* PetLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetLoginView.swift; sourceTree = "<group>"; };
+		188C9E512C1BF84E002438D2 /* PetLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetLoginController.swift; sourceTree = "<group>"; };
 		18A32A9F2B95AECA00CC937D /* HudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HudView.swift; sourceTree = "<group>"; };
 		18A32AA12B95AFFD00CC937D /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		18A32AA42B95C86F00CC937D /* SaveLoginInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveLoginInfo.swift; sourceTree = "<group>"; };
@@ -491,6 +495,37 @@
 			path = Web;
 			sourceTree = "<group>";
 		};
+		188C9E4D2C1BF80B002438D2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				188C9E4F2C1BF83D002438D2 /* PetLoginView.swift */,
+				188C9E512C1BF84E002438D2 /* PetLoginController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		188C9E4E2C1BF811002438D2 /* ADD */ = {
+			isa = PBXGroup;
+			children = (
+				180EFF112C182B100037B47B /* Coiny-Regular.ttf */,
+				180EFF0F2C1821990037B47B /* homeAview.json */,
+				180EFF0D2C1821180037B47B /* HomeAView.swift */,
+				18FF56812C0971940084A032 /* PetViewController.swift */,
+				180EFF132C1846810037B47B /* SecondView.swift */,
+				180EFF152C1850F10037B47B /* SecondController.swift */,
+				180EFF172C197D230037B47B /* FoodView.swift */,
+				180EFF192C197D320037B47B /* WaterView.swift */,
+				180EFF1B2C197D450037B47B /* TreatsView.swift */,
+				180EFF1D2C197D560037B47B /* WalkView.swift */,
+				18C789D62C1A8B4100FE6A00 /* ThreeViewController.swift */,
+				18C789D82C1A8C4200FE6A00 /* ThreeView.swift */,
+				18C789DA2C1AAD7700FE6A00 /* FourViewController.swift */,
+				18C789DC2C1AAD8300FE6A00 /* FourView.swift */,
+				18C789DE2C1AE4E100FE6A00 /* APopDelView.swift */,
+			);
+			path = ADD;
+			sourceTree = "<group>";
+		};
 		18BBD0F72BA1468600F3D322 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -632,21 +667,8 @@
 		18FF56892C0971940084A032 /* ACode */ = {
 			isa = PBXGroup;
 			children = (
-				180EFF112C182B100037B47B /* Coiny-Regular.ttf */,
-				180EFF0F2C1821990037B47B /* homeAview.json */,
-				180EFF0D2C1821180037B47B /* HomeAView.swift */,
-				18FF56812C0971940084A032 /* PetViewController.swift */,
-				180EFF132C1846810037B47B /* SecondView.swift */,
-				180EFF152C1850F10037B47B /* SecondController.swift */,
-				180EFF172C197D230037B47B /* FoodView.swift */,
-				180EFF192C197D320037B47B /* WaterView.swift */,
-				180EFF1B2C197D450037B47B /* TreatsView.swift */,
-				180EFF1D2C197D560037B47B /* WalkView.swift */,
-				18C789D62C1A8B4100FE6A00 /* ThreeViewController.swift */,
-				18C789D82C1A8C4200FE6A00 /* ThreeView.swift */,
-				18C789DA2C1AAD7700FE6A00 /* FourViewController.swift */,
-				18C789DC2C1AAD8300FE6A00 /* FourView.swift */,
-				18C789DE2C1AE4E100FE6A00 /* APopDelView.swift */,
+				188C9E4E2C1BF811002438D2 /* ADD */,
+				188C9E4D2C1BF80B002438D2 /* Login */,
 			);
 			path = ACode;
 			sourceTree = "<group>";
@@ -836,6 +858,7 @@
 				182294662B90616A0045C533 /* TypeImageView.swift in Sources */,
 				182516672B8C254700FFEE85 /* FristViewController.swift in Sources */,
 				182F671B2B8D811D000CA090 /* YBTabBarButton.swift in Sources */,
+				188C9E522C1BF84E002438D2 /* PetLoginController.swift in Sources */,
 				1835E0BE2B9087FE00C20E0E /* ContractViewController.swift in Sources */,
 				1845FD302B8C95D400B4BEEF /* HomeViewController.swift in Sources */,
 				1876701A2B97384A000B256A /* CWebViewController.swift in Sources */,
@@ -847,6 +870,7 @@
 				18E9ACFC2B8F3F2900DC16A3 /* NetApiWork.swift in Sources */,
 				182516692B8C258600FFEE85 /* Define.swift in Sources */,
 				1835E0C42B90882100C20E0E /* ContractView.swift in Sources */,
+				188C9E502C1BF83D002438D2 /* PetLoginView.swift in Sources */,
 				18A32AA02B95AECA00CC937D /* HudView.swift in Sources */,
 				18F95BFB2B91848E005273A2 /* ProfileView.swift in Sources */,
 				18F95C012B91AE1E005273A2 /* AboutView.swift in Sources */,
