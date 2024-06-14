@@ -39,7 +39,7 @@ class PersonalView: UIView,UITableViewDelegate,UITableViewDataSource {
     lazy var mainBtn2: UIButton = {
         let button = UIButton(type: .custom)
         button.addTarget(self, action: #selector(sureClick), for: .touchUpInside)
-        button.backgroundColor = UIColor("#BBD598")
+        button.backgroundColor = UIColor("#FFD916")
         button.layer.cornerRadius = 28.pix()
         button.setTitle("Konfirmasi", for: .normal)
         button.setTitleColor(.white, for: .normal)

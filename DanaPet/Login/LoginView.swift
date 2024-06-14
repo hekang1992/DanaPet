@@ -19,9 +19,9 @@ class LoginView: UIView ,UITextFieldDelegate{
     var block2:BtnBlock?
     lazy var bgView: GradientView = {
         let bgView = GradientView()
-        let topColer = UIColor("#E4D7EF")
-        let minColer = UIColor("#DEE9CF")
-        let booColer = UIColor("#E2EFF3")
+        let topColer = UIColor("#FFF5C1")
+        let minColer = UIColor("#FFF5C1")
+        let booColer = UIColor("#FFF5C1")
         bgView.direction = GradientDirection.topToBottom
         bgView.startColor = topColer
         bgView.middleColor = minColer
@@ -83,7 +83,7 @@ class LoginView: UIView ,UITextFieldDelegate{
         let button = UIButton(type: .system)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14.pix())
         button.contentHorizontalAlignment = .left
-        button.setTitleColor(UIColor("#9FBE76"), for: .normal)
+        button.setTitleColor(UIColor("#C5A500"), for: .normal)
         button.setTitle("Kirim kode verifikasi", for: .normal)
         button.addTarget(self, action: #selector(startCountdown(_:)), for: .touchUpInside)
         return button
@@ -95,7 +95,7 @@ class LoginView: UIView ,UITextFieldDelegate{
         loginBtn.layer.cornerRadius = 10.pix()
         loginBtn.setTitleColor(UIColor("#FFFFFF"), for: .normal)
         loginBtn.setTitle("Masuk", for: .normal)
-        loginBtn.backgroundColor = UIColor("#BBD598")
+        loginBtn.backgroundColor = UIColor("#FFD916")
         loginBtn.addTarget(self, action: #selector(loginClick), for: .touchUpInside)
         return loginBtn
     }()
@@ -108,12 +108,12 @@ class LoginView: UIView ,UITextFieldDelegate{
         text.yy_font = UIFont.systemFont(ofSize: 12.pix())
         text.yy_color = UIColor.black
         colorText.yy_font = UIFont.systemFont(ofSize: 12.pix())
-        colorText.yy_color = UIColor("#9FBE76")
+        colorText.yy_color = UIColor("#C5A500")
         text.append(colorText)
         let highlight = YYTextHighlight()
         text.yy_setTextHighlight(highlight, range: NSRange(location: 0, length: text.length))
         highlight.tapAction = { [weak self] containerView, text, range, rect in
-            MBProgressHUD.wj_showPlainText("链接被点击", view: nil)
+            
         }
         agreeMentLB.attributedText = text
         agreeMentLB.isUserInteractionEnabled = true

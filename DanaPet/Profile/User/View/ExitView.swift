@@ -33,7 +33,7 @@ class ExitView: UIView {
         button.setTitleColor(.black, for: .normal)
         button.addTarget(self, action: #selector(sureBtnClick(_:)), for: .touchUpInside)
         button.layer.borderWidth = 1
-        button.layer.borderColor = UIColor("#BBD598").cgColor
+        button.layer.borderColor = UIColor("#FFD916").cgColor
         return button
     }()
     
@@ -42,12 +42,12 @@ class ExitView: UIView {
         button.tag = 101
         button.layer.cornerRadius = 20.pix()
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
-        button.backgroundColor = UIColor("#BBD598")
+        button.backgroundColor = UIColor("#FFD916")
         button.setTitle("Batal", for: .normal)
         button.setTitleColor(UIColor.white, for: .normal)
         button.addTarget(self, action: #selector(sureBtnClick(_:)), for: .touchUpInside)
         button.layer.borderWidth = 1
-        button.layer.borderColor = UIColor("#BBD598").cgColor
+        button.layer.borderColor = UIColor("#FFD916").cgColor
         return button
     }()
     
@@ -95,7 +95,7 @@ class ExitView: UIView {
         let sbtn = viewWithTag(100) as! UIButton
         let btn = viewWithTag(101) as! UIButton
         if mbtn.tag == 100 {
-            mbtn.backgroundColor = UIColor("#BBD598")
+            mbtn.backgroundColor = UIColor("#FFD916")
             if mbtn.titleLabel?.text == "Konfirmasi" {
                 mbtn.setTitle("Konfirmasi", for: .normal)
             }else{
@@ -107,7 +107,7 @@ class ExitView: UIView {
             btn.setTitleColor(UIColor("#000000"), for: .normal)
             block?()
         } else {
-            mbtn.backgroundColor = UIColor("#BBD598")
+            mbtn.backgroundColor = UIColor("#FFD916")
             mbtn.setTitle("Batal", for: .normal)
             mbtn.setTitleColor(UIColor.white, for: .normal)
             sbtn.backgroundColor = UIColor("#FFFFFF")

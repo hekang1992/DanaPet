@@ -45,7 +45,7 @@ class DeleteView: UIView {
     lazy var mainBtn1: UIButton = {
         let button = UIButton(type: .custom)
         button.addTarget(self, action: #selector(cameraClick), for: .touchUpInside)
-        button.backgroundColor = UIColor("#BBD598")
+        button.backgroundColor = UIColor("#FFD916")
         button.layer.cornerRadius = 22.pix()
         button.setTitle("Batal", for: .normal)
         button.setTitleColor(.white, for: .normal)

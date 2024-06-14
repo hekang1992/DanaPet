@@ -24,6 +24,8 @@ class HomeTwoView: UIView, GKCycleScrollViewDataSource,UITableViewDelegate,UITab
     
     var type: String?
     
+    var applogo: String?
+    
     lazy var iconImageView: UIImageView = {
         let iconImageView = UIImageView()
         iconImageView.image = UIImage(named: "qweerc")
@@ -209,7 +211,7 @@ class HomeTwoView: UIView, GKCycleScrollViewDataSource,UITableViewDelegate,UITab
             cell = GKCycleScrollViewCell()
         }
         let model = largeDataModel1?[index]
-        let imageUrl = URL(string: model?.favors ?? "")
+        let imageUrl = URL(string: applogo ?? "")
         cell?.imageView.kf.setImage(with: imageUrl, placeholder: UIImage(named: "bannetN"))
         return cell!
     }

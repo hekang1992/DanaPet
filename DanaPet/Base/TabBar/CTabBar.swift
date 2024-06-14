@@ -59,10 +59,10 @@ class CTabBar: UIView, CustomTabBarButtonDelegate {
                 currentButton.iconBtn.isSelected = true
                 currentButton.titleLbl.textColor = UIColor.white
                 currentButton.iconBtn.setImage(UIImage(named: selImageArrM[index]), for: .normal)
-                currentButton.backgroundColor = UIColor("#BBD598")
+                currentButton.backgroundColor = UIColor("#FFD916")
             } else {
                 currentButton.iconBtn.isSelected = false
-                currentButton.titleLbl.textColor = UIColor("#BBD598")
+                currentButton.titleLbl.textColor = UIColor("#FFD916")
                 currentButton.backgroundColor = UIColor("#FFFFFF")
                 currentButton.iconBtn.setImage(UIImage(named: norImageArrM[index]), for: .normal)
             }

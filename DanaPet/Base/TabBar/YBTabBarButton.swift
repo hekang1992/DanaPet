@@ -22,7 +22,7 @@ class YBTabBarButton: UIControl {
     
     lazy var titleLbl: UILabel = {
         let titleLbl = UILabel()
-        titleLbl.textColor = UIColor("#BBD598")
+        titleLbl.textColor = UIColor("#FFD916")
         titleLbl.font = UIFont.systemFont(ofSize: 19.pix())
         titleLbl.textAlignment = .left
         return titleLbl

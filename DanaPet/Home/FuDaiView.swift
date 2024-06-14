@@ -34,7 +34,7 @@ class FuDaiView: UIView {
         let label1 = UILabel.createLabel(font: UIFont.systemFont(ofSize: 12.pix(), weight: .regular), textColor: UIColor("#000000"), textAlignment: .center)
         label1.layer.cornerRadius = 7.pix()
         label1.layer.masksToBounds = true
-        label1.backgroundColor = UIColor("#BBD598")
+        label1.backgroundColor = UIColor("#FFD916")
         return label1
     }()
 

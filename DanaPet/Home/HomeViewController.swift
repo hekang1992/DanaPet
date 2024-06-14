@@ -180,6 +180,7 @@ class HomeViewController: BaseViewController {
                         self?.largeDataModel = model1.incomes?.filter{ $0.lives == "yy" }.compactMap{ $0.drawing }.first ?? []
                         if let modelArray = self?.largeDataModel {
                             self?.homeTwoView.type = model1.app_name
+                            self?.homeTwoView.applogo = model1.app_logo
                             self?.homeTwoView.largeDataModel = modelArray
                         }
                         self?.largeDataModel1 = model1.incomes?.filter{ $0.lives == "mm" }.compactMap{ $0.drawing }.first ?? []
@@ -193,6 +194,7 @@ class HomeViewController: BaseViewController {
                         self?.largeDataModel = model1.incomes?.filter{ $0.lives == "nn" }.compactMap{ $0.drawing }.first ?? []
                         if let modelArray = self?.largeDataModel {
                             self?.homeOneView.type = model1.app_name
+                            self?.homeOneView.applogo = model1.app_logo
                             self?.homeOneView.largeDataModel = modelArray
                         }
                         self?.homeOneView.tableView.reloadData()

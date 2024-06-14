@@ -63,7 +63,7 @@ class LoginViewController: BaseViewController {
         if seconds > 0 {
             seconds -= 1
             loginView.countdownButton.isEnabled = false
-            loginView.countdownButton.setTitle("Resend(\(self.seconds))", for: .normal)
+            loginView.countdownButton.setTitle("Resend(\(seconds))", for: .normal)
         } else {
             stopTimer()
             loginView.countdownButton.isEnabled = true

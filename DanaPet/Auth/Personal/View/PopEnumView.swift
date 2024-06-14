@@ -19,9 +19,9 @@ class PopEnumView: UIView, UITableViewDelegate, UITableViewDataSource {
     
     lazy var bgView: UIView = {
         let bgView = GradientView()
-        let topColer = UIColor("#E4D7EF")
-        let minColer = UIColor("#DEE9CF")
-        let booColer = UIColor("#E2EFF3")
+        let topColer = UIColor("#FFF5C1")
+        let minColer = UIColor("#FFF5C1")
+        let booColer = UIColor("#FFF5C1")
         bgView.direction = GradientDirection.topToBottom
         bgView.startColor = topColer
         bgView.middleColor = minColer
@@ -101,7 +101,7 @@ class PopEnumView: UIView, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as? InfoCell
-        cell?.nameLabel.backgroundColor = UIColor("#BBD598")
+        cell?.nameLabel.backgroundColor = UIColor("#FFD916")
         let model = modelArray?[indexPath.row]
         guard let model = model else { return }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {

@@ -33,9 +33,9 @@ class PopCityView: UIView, UIPickerViewDelegate,UIPickerViewDataSource {
     
     lazy var bgView: UIView = {
         let bgView = GradientView()
-        let topColer = UIColor("#E4D7EF")
-        let minColer = UIColor("#DEE9CF")
-        let booColer = UIColor("#E2EFF3")
+        let topColer = UIColor("#FFF5C1")
+        let minColer = UIColor("#FFF5C1")
+        let booColer = UIColor("#FFF5C1")
         bgView.direction = GradientDirection.topToBottom
         bgView.startColor = topColer
         bgView.middleColor = minColer
@@ -75,19 +75,19 @@ class PopCityView: UIView, UIPickerViewDelegate,UIPickerViewDataSource {
     }()
     
     lazy var label2: UILabel = {
-        let label1 = UILabel.createLabel(font: UIFont.systemFont(ofSize: 18.pix(), weight: .regular), textColor: UIColor("#BBD598"), textAlignment: .left)
+        let label1 = UILabel.createLabel(font: UIFont.systemFont(ofSize: 18.pix(), weight: .regular), textColor: UIColor("#FFD916"), textAlignment: .left)
         label1.text = "123"
         return label1
     }()
     
     lazy var label3: UILabel = {
-        let label1 = UILabel.createLabel(font: UIFont.systemFont(ofSize: 18.pix(), weight: .regular), textColor: UIColor("#BBD598"), textAlignment: .center)
+        let label1 = UILabel.createLabel(font: UIFont.systemFont(ofSize: 18.pix(), weight: .regular), textColor: UIColor("#FFD916"), textAlignment: .center)
         label1.text = "456"
         return label1
     }()
     
     lazy var label4: UILabel = {
-        let label1 = UILabel.createLabel(font: UIFont.systemFont(ofSize: 18.pix(), weight: .regular), textColor: UIColor("#BBD598"), textAlignment: .left)
+        let label1 = UILabel.createLabel(font: UIFont.systemFont(ofSize: 18.pix(), weight: .regular), textColor: UIColor("#FFD916"), textAlignment: .left)
         label1.text = "789"
         return label1
     }()

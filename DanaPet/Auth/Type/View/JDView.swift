@@ -27,9 +27,9 @@ class JDView: UIView {
     
     lazy var bgView: GradientView = {
         let bgView = GradientView()
-        let topColer = UIColor("#E4D7EF")
-        let minColer = UIColor("#DEE9CF")
-        let booColer = UIColor("#E2EFF3")
+        let topColer = UIColor("#FFF5C1")
+        let minColer = UIColor("#FFF5C1")
+        let booColer = UIColor("#FFF5C1")
         bgView.direction = GradientDirection.topToBottom
         bgView.startColor = topColer
         bgView.middleColor = minColer
@@ -105,7 +105,7 @@ class JDView: UIView {
     lazy var mainBtn2: UIButton = {
         let button = UIButton(type: .custom)
         button.addTarget(self, action: #selector(sureClick), for: .touchUpInside)
-        button.backgroundColor = UIColor("#BBD598")
+        button.backgroundColor = UIColor("#FFD916")
         button.layer.cornerRadius = 28.pix()
         button.setTitle("Lamar Sekarang", for: .normal)
         button.setTitleColor(.white, for: .normal)

@@ -15,9 +15,9 @@ class BaseViewController: UIViewController,UINavigationControllerDelegate {
     
     lazy var bgView: GradientView = {
         let bgView = GradientView()
-        let topColer = UIColor("#E4D7EF")
-        let minColer = UIColor("#DEE9CF")
-        let booColer = UIColor("#E2EFF3")
+        let topColer = UIColor("#FFF5C1")
+        let minColer = UIColor("#FFF5C1")
+        let booColer = UIColor("#FFF5C1")
         bgView.direction = GradientDirection.topToBottom
         bgView.startColor = topColer
         bgView.middleColor = minColer
@@ -221,7 +221,7 @@ class BaseViewController: UIViewController,UINavigationControllerDelegate {
         exitView.cancelBtn.setTitle("Batal", for: .normal)
         exitView.sureBtn.backgroundColor = UIColor("#FFFFFF")
         exitView.sureBtn.setTitleColor(.black, for: .normal)
-        exitView.cancelBtn.backgroundColor = UIColor("#BBD598")
+        exitView.cancelBtn.backgroundColor = UIColor("#FFD916")
         exitView.cancelBtn.setTitleColor(.white, for: .normal)
         exitView.frame = self.view.bounds
         let alertVC = TYAlertController(alert: exitView, preferredStyle: .alert)
@@ -241,7 +241,7 @@ class BaseViewController: UIViewController,UINavigationControllerDelegate {
         exitView.descLabel.text = title
         exitView.sureBtn.setTitle("Pengaturan", for: .normal)
         exitView.cancelBtn.setTitle("Batal", for: .normal)
-        exitView.sureBtn.backgroundColor = UIColor("#BBD598")
+        exitView.sureBtn.backgroundColor = UIColor("#FFD916")
         exitView.sureBtn.setTitleColor(.white, for: .normal)
         exitView.cancelBtn.backgroundColor = UIColor("#FFFFFF")
         exitView.cancelBtn.setTitleColor(.black, for: .normal)

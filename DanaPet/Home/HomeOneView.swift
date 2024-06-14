@@ -20,6 +20,8 @@ class HomeOneView: UIView,UITableViewDelegate,UITableViewDataSource, GKCycleScro
     
     var type: String?
     
+    var applogo: String?
+    
     lazy var iconImageView: UIImageView = {
         let iconImageView = UIImageView()
         iconImageView.image = UIImage(named: "qweerc")
@@ -53,7 +55,7 @@ class HomeOneView: UIView,UITableViewDelegate,UITableViewDataSource, GKCycleScro
     
     lazy var footOneView: FootOneView = {
         let footOneView = FootOneView()
-        footOneView.backgroundColor = UIColor("#BBD598")
+        footOneView.backgroundColor = UIColor("#FFD916")
         footOneView.layer.cornerRadius = 32.pix()
         return footOneView
     }()
@@ -95,7 +97,7 @@ class HomeOneView: UIView,UITableViewDelegate,UITableViewDataSource, GKCycleScro
         let model = largeDataModel?[indexPath.row]
         cell.model = model
         self.label.text = type
-        let imageUrl = URL(string: model?.auctions ?? "")
+        let imageUrl = URL(string: applogo ?? "")
         self.iconImageView.kf.setImage(with: imageUrl, placeholder: UIImage(named: "qweerc"))
         cell.block = { [weak self] in
             self?.blcok?(model?.tradition ?? "")
@@ -135,11 +137,11 @@ class HomeOneView: UIView,UITableViewDelegate,UITableViewDataSource, GKCycleScro
             make.top.equalTo(footView).offset(30.pix())
             make.centerX.equalTo(footView)
             make.left.equalTo(footView).offset(17.pix())
-            make.height.equalTo(127.pix())
+            make.height.equalTo(111.pix())
         }
         footOneView.snp.makeConstraints { make in
             make.left.equalTo(footView).offset(17.pix())
-            make.top.equalTo(cycleScrollView.snp.top).offset(89.pix())
+            make.top.equalTo(cycleScrollView.snp.top).offset(74.pix())
             make.centerX.equalTo(footView)
             make.height.equalTo(290.pix())
         }

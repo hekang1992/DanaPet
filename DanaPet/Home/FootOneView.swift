@@ -23,24 +23,24 @@ class FootOneView: UIView {
     }()
     
     lazy var label1: UILabel = {
-        let label1 = UILabel.createLabel(font: UIFont.systemFont(ofSize: 16.pix(), weight: .medium), textColor: .white, textAlignment: .center)
+        let label1 = UILabel.createLabel(font: UIFont.systemFont(ofSize: 16.pix(), weight: .medium), textColor: .black, textAlignment: .center)
         label1.numberOfLines = 0
         return label1
     }()
     
     lazy var label2: UILabel = {
-        let label1 = UILabel.createLabel(font: UIFont.systemFont(ofSize: 16.pix(), weight: .medium), textColor: .white, textAlignment: .center)
+        let label1 = UILabel.createLabel(font: UIFont.systemFont(ofSize: 16.pix(), weight: .medium), textColor: .black, textAlignment: .center)
         label1.numberOfLines = 0
         return label1
     }()
     
     lazy var label3: UILabel = {
-        let label1 = UILabel.createLabel(font: UIFont.systemFont(ofSize: 16.pix(), weight: .semibold), textColor: .white, textAlignment: .center)
+        let label1 = UILabel.createLabel(font: UIFont.systemFont(ofSize: 16.pix(), weight: .semibold), textColor: .black, textAlignment: .center)
         return label1
     }()
     
     lazy var label4: UILabel = {
-        let label1 = UILabel.createLabel(font: UIFont.systemFont(ofSize: 16.pix(), weight: .semibold), textColor: .white, textAlignment: .center)
+        let label1 = UILabel.createLabel(font: UIFont.systemFont(ofSize: 16.pix(), weight: .semibold), textColor: .black, textAlignment: .center)
         return label1
     }()
     

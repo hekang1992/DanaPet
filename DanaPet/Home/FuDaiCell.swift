@@ -157,7 +157,7 @@ class FuDaiCell: UITableViewCell {
             if model.masters == "3" {
                 self.label2.backgroundColor = UIColor("#D9D9D9")
             }else {
-                self.label2.backgroundColor = UIColor("#BBD598")
+                self.label2.backgroundColor = UIColor("#FFD916")
             }
         }
     }
