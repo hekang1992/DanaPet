@@ -55,6 +55,7 @@ let petanimal = "/pet-animal"
 //pet-animal
 
 //ACode
+let pethome = "/pet-home"
 let petsendcode = "/pet-send-code"
 let petlogin = "/pet-login"
 let petlogout = "/pet-logout"

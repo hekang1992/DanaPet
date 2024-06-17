@@ -76,7 +76,12 @@ class ThreeView: UIView {
     
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
-        tableView.backgroundColor = .red
+        tableView.register(PetCheckViewCell.self, forCellReuseIdentifier: "PetCheckViewCell")
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.backgroundColor = UIColor("#FFFDF2")
+        tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
         return tableView
     }()
     
@@ -90,8 +95,8 @@ class ThreeView: UIView {
         bgImageView.addSubview(maoImageView)
         bgImageView.addSubview(whiimageView)
         whiimageView.addSubview(timeLabel)
-        addSubview(addBtn)
         addSubview(tableView)
+        addSubview(addBtn)
         bgImageView.snp.makeConstraints { make in
             make.left.right.top.equalToSuperview()
             make.height.equalTo(340.pix())
@@ -132,7 +137,7 @@ class ThreeView: UIView {
         }
         tableView.snp.makeConstraints { make in
             make.left.bottom.right.equalToSuperview()
-            make.top.equalTo(timeLabel.snp.bottom).offset(4.pix())
+            make.top.equalTo(whiimageView.snp.bottom)
         }
         addBtn.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(20.pix())
@@ -149,8 +154,8 @@ class ThreeView: UIView {
 }
 
 
-extension ThreeView {
-    
+extension ThreeView: UITableViewDelegate, UITableViewDataSource {
+
     @objc func naozhongClick() {
         self.gerenblock?()
     }
@@ -169,6 +174,29 @@ extension ThreeView {
         dateFormatter.dateFormat = "dd MMM yyyy"
         dateFormatter.locale = Locale(identifier: "en_US")
         return dateFormatter.string(from: currentDate)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = PetCheckViewCell(style: .subtitle, reuseIdentifier: "PetCheckViewCell")
+        cell.backgroundColor = .clear
+        cell.selectionStyle = .none
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 185.pix()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.01
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return nil
     }
     
 }

@@ -11,6 +11,20 @@ import UIColor_Hex_Swift
 
 class HomeAView: UIView {
     
+    let buttonsPerRow = 2
+    
+    var array: [Any]? {
+        didSet {
+            let count = array?.count ?? 0
+            let columns = (count + buttonsPerRow - 1) / buttonsPerRow + 1
+            conView.buttonCount = array?.count ?? 0
+            conView.snp.updateConstraints { make in
+                make.height.equalTo(CGFloat(columns) * 73.pix())
+            }
+            self.layoutSubviews()
+        }
+    }
+    
     var block1: (() -> Void)?
     
     var block2: (() -> Void)?
@@ -90,6 +104,11 @@ class HomeAView: UIView {
         return btn
     }()
     
+    lazy var conView: PetCustomView = {
+        let conView = PetCustomView()
+        conView.backgroundColor = .red
+        return conView
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -101,9 +120,9 @@ class HomeAView: UIView {
         iconImageView.addSubview(tx)
         hudView.addSubview(icon2ImageView)
         icon2ImageView.addSubview(name1Label)
+        scrollView.addSubview(conView)
         scrollView.addSubview(btn1)
         scrollView.addSubview(btn2)
-        
         scrollView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
@@ -142,13 +161,8 @@ class HomeAView: UIView {
             make.bottom.equalToSuperview().offset(-10.pix())
             make.size.equalTo(CGSize(width: 200.pix(), height: 23.pix()))
         }
-        btn1.snp.makeConstraints { make in
+        conView.snp.makeConstraints { make in
             make.top.equalTo(icon2ImageView.snp.bottom).offset(22.pix())
-            make.centerX.equalToSuperview()
-            make.size.equalTo(CGSize(width: 335.pix(), height: 73.pix()))
-        }
-        btn2.snp.makeConstraints { make in
-            make.top.equalTo(btn1.snp.bottom).offset(60.pix())
             make.centerX.equalToSuperview()
             make.size.equalTo(CGSize(width: 335.pix(), height: 73.pix()))
         }
@@ -163,6 +177,16 @@ extension HomeAView: UITextFieldDelegate {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        btn1.snp.makeConstraints { make in
+            make.top.equalTo(conView.snp.bottom)
+            make.centerX.equalToSuperview()
+            make.size.equalTo(CGSize(width: 335.pix(), height: 73.pix()))
+        }
+        btn2.snp.makeConstraints { make in
+            make.top.equalTo(btn1.snp.bottom).offset(60.pix())
+            make.centerX.equalToSuperview()
+            make.size.equalTo(CGSize(width: 335.pix(), height: 73.pix()))
+        }
         self.btn2.setNeedsLayout()
         self.layoutIfNeeded()
         let maxY = CGRectGetMaxY(self.btn2.frame)

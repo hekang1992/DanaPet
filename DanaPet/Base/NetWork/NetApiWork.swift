@@ -206,7 +206,7 @@ extension NetApiWork {
                 guard let model = model else { return }
                 if model.pet_code == -2 {
                     complete(model)
-                    self?.showALoginVc()
+//                    self?.showALoginVc()
                 }else {
                     complete(model)
                 }

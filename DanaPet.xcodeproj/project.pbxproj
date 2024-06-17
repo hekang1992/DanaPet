@@ -74,6 +74,8 @@
 		18BBD0FA2BA146AB00F3D322 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BBD0F92BA146AB00F3D322 /* OrderView.swift */; };
 		18BBD0FC2BA146C300F3D322 /* OrderNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BBD0FB2BA146C300F3D322 /* OrderNormalCell.swift */; };
 		18BBD1022BA17CD000F3D322 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BBD1012BA17CD000F3D322 /* EmptyView.swift */; };
+		18C658A32C2023620030B579 /* PetCheckViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C658A22C2023620030B579 /* PetCheckViewCell.swift */; };
+		18C658A52C202A8E0030B579 /* PetCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C658A42C202A8E0030B579 /* PetCustomView.swift */; };
 		18C789D72C1A8B4100FE6A00 /* ThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C789D62C1A8B4100FE6A00 /* ThreeViewController.swift */; };
 		18C789D92C1A8C4200FE6A00 /* ThreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C789D82C1A8C4200FE6A00 /* ThreeView.swift */; };
 		18C789DB2C1AAD7700FE6A00 /* FourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C789DA2C1AAD7700FE6A00 /* FourViewController.swift */; };
@@ -176,6 +178,8 @@
 		18BBD0F92BA146AB00F3D322 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		18BBD0FB2BA146C300F3D322 /* OrderNormalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderNormalCell.swift; sourceTree = "<group>"; };
 		18BBD1012BA17CD000F3D322 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		18C658A22C2023620030B579 /* PetCheckViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCheckViewCell.swift; sourceTree = "<group>"; };
+		18C658A42C202A8E0030B579 /* PetCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCustomView.swift; sourceTree = "<group>"; };
 		18C789D62C1A8B4100FE6A00 /* ThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeViewController.swift; sourceTree = "<group>"; };
 		18C789D82C1A8C4200FE6A00 /* ThreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeView.swift; sourceTree = "<group>"; };
 		18C789DA2C1AAD7700FE6A00 /* FourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourViewController.swift; sourceTree = "<group>"; };
@@ -516,6 +520,7 @@
 				180EFF112C182B100037B47B /* Coiny-Regular.ttf */,
 				180EFF0F2C1821990037B47B /* homeAview.json */,
 				180EFF0D2C1821180037B47B /* HomeAView.swift */,
+				18C658A42C202A8E0030B579 /* PetCustomView.swift */,
 				18FF56812C0971940084A032 /* PetViewController.swift */,
 				180EFF132C1846810037B47B /* SecondView.swift */,
 				180EFF152C1850F10037B47B /* SecondController.swift */,
@@ -525,6 +530,7 @@
 				180EFF1D2C197D560037B47B /* WalkView.swift */,
 				18C789D62C1A8B4100FE6A00 /* ThreeViewController.swift */,
 				18C789D82C1A8C4200FE6A00 /* ThreeView.swift */,
+				18C658A22C2023620030B579 /* PetCheckViewCell.swift */,
 				18C789DA2C1AAD7700FE6A00 /* FourViewController.swift */,
 				18C789DC2C1AAD8300FE6A00 /* FourView.swift */,
 				18C789DE2C1AE4E100FE6A00 /* APopDelView.swift */,
@@ -864,6 +870,8 @@
 				18EAFD7D2BC558CE0060AD2C /* FuDaiCell.swift in Sources */,
 				182294662B90616A0045C533 /* TypeImageView.swift in Sources */,
 				182516672B8C254700FFEE85 /* FristViewController.swift in Sources */,
+				18C658A52C202A8E0030B579 /* PetCustomView.swift in Sources */,
+				18C658A32C2023620030B579 /* PetCheckViewCell.swift in Sources */,
 				182F671B2B8D811D000CA090 /* YBTabBarButton.swift in Sources */,
 				188C9E522C1BF84E002438D2 /* PetLoginController.swift in Sources */,
 				1835E0BE2B9087FE00C20E0E /* ContractViewController.swift in Sources */,

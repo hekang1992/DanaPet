@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MBProgressHUD_WJExtension
 
 class PetViewController: BaseViewController{
     
@@ -40,15 +41,10 @@ class PetViewController: BaseViewController{
         
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        allPetApi()
+    }
     
 }
 
@@ -63,6 +59,24 @@ extension PetViewController {
     func loginVc() {
         let loginVc = PetLoginController()
         self.navigationController?.pushViewController(loginVc, animated: true)
+    }
+    
+    func allPetApi() {
+        addHudView()
+        NetApiWork.shared.requestACodeAPI(params: [:], pageUrl: pethome, method: .post) { [weak self] baseModel in
+            let pet_code = baseModel.pet_code
+            let pet_msg = baseModel.pet_msg
+            if pet_code == 0 || pet_code == 00 {
+                let dict = baseModel.pet_data
+                let pets = dict?["pets"] as! [Any]
+                self?.homeView.array = pets
+            }
+            self?.removeHudView()
+            MBProgressHUD.wj_showPlainText(pet_msg ?? "", view: nil)
+        } errorBlock: { [weak self] error in
+            self?.removeHudView()
+        }
+
     }
     
 }
