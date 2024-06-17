@@ -55,17 +55,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         windowAnimation()
         if let userInfo = notification.userInfo {
             if let value = userInfo["cleaved"] as? String {
-                if value == "uu" {
-//                    window?.rootViewController = TabBarViewController()
+                if value == "dog" {
                     window?.rootViewController = BaseNavViewController(rootViewController: PetViewController())
                 }else{
-                    window?.rootViewController = BaseNavViewController(rootViewController: PetViewController())
-//                    window?.rootViewController = TabBarViewController()
+                    window?.rootViewController = TabBarViewController()
                 }
             }
         }else {
             window?.rootViewController = BaseNavViewController(rootViewController: PetViewController())
-//            window?.rootViewController = TabBarViewController()
         }
     }
     

@@ -6,8 +6,15 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ThreeViewController: BaseViewController {
+    
+    var pet_id: String = ""
+    
+    var pet_img: String = ""
+    
+    var pet_name: String = ""
     
     lazy var threeView: ThreeView = {
         let threeView = ThreeView()
@@ -30,6 +37,10 @@ class ThreeViewController: BaseViewController {
         threeView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        threeView.nameLabel.text = pet_name
+        let imageUrl = URL(string: pet_img)
+        threeView.maoImageView.kf.setImage(with: imageUrl, placeholder: UIImage(named: "Slicemao"))
+        
     }
 
     /*

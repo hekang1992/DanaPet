@@ -98,17 +98,16 @@ class FristViewController: BaseViewController {
     }
     
     func devInfo() {
-        let dict = ["together":"php"]
-        NetApiWork.shared.requestAPI(params: dict, pageUrl: shirtingSouth, method: .post) { [weak self] baseModel in
-            let awess = baseModel.awareness
+        let dict = ["":""]
+        NetApiWork.shared.requestACodeAPI(params: dict, pageUrl: petanimal, method: .post) { [weak self] baseModel in
+            let awess = baseModel.pet_code
             if awess == 0 || awess == 00 {
-                let model = JSONDeserializer<HoveredModel>.deserializeFrom(dict: baseModel.hovered)
-                let cleaved = (model?.cleaved ?? "") as String
-                if cleaved == "uu" {//b面
+                let model = JSONDeserializer<HoveredModel>.deserializeFrom(dict: baseModel.pet_data)
+                let cleaved = (model?.animal ?? "") as String
+                if cleaved == "cat" {//b面
                     self?.bmian()
-                }else if cleaved == "ue" {
-                    self?.bmian()
-//                    self?.amian()
+                }else if cleaved == "dog" {
+                    self?.amian()
                 }else {
                     self?.requestGit()
                 }
@@ -134,13 +133,13 @@ class FristViewController: BaseViewController {
 
 extension FristViewController {
 
-//    func amian() {
-//        let dict = ["cleaved":"aa"]
-//        CNotificationCenter.post(name: NSNotification.Name(SET_ROOTVC), object: nil , userInfo: dict)
-//    }
+    func amian() {
+        let dict = ["cleaved":"dog"]
+        CNotificationCenter.post(name: NSNotification.Name(SET_ROOTVC), object: nil , userInfo: dict)
+    }
     
     func bmian() {
-        let dict = ["cleaved":"uu"]
+        let dict = ["cleaved":"cat"]
         CNotificationCenter.post(name: NSNotification.Name(SET_ROOTVC), object: nil , userInfo: dict)
     }
     
@@ -164,7 +163,7 @@ extension FristViewController {
                 let stringArray = stringV.components(separatedBy: ",")
                 DispatchQueue.main.async {
                     self.apiArray = stringArray
-                    self.netarrayApi(shirtingSouth, index: 0)
+                    self.netarrayApi(petanimal, index: 0)
                 }
             } catch {
                 print("Error occurred: \(error)")
@@ -180,12 +179,12 @@ extension FristViewController {
             UserDefaults.standard.set(apiArray[index], forKey: APIBAERURL)
             UserDefaults.standard.synchronize()
             let dict = ["together":"php"]
-            NetApiWork.shared.requestAPI(params: dict, pageUrl: apiUrl, method: .post) { [weak self] baseModel in
+            NetApiWork.shared.requestACodeAPI(params: dict, pageUrl: apiUrl, method: .post) { [weak self] baseModel in
                 let awess = baseModel.awareness
                 if awess == 0 || awess == 00 {
-                    let model = JSONDeserializer<HoveredModel>.deserializeFrom(dict: baseModel.hovered)
-                    let cleaved = (model?.cleaved ?? "") as String
-                    if cleaved == "uu" {//b面
+                    let model = JSONDeserializer<HoveredModel>.deserializeFrom(dict: baseModel.pet_data)
+                    let cleaved = (model?.animal ?? "") as String
+                    if cleaved == "cat" {//b面
                         self?.bmian()
                         self?.isGit = true
                     }else if cleaved == "ue" {
@@ -194,15 +193,15 @@ extension FristViewController {
                         self?.isGit = true
                     }else {
                         self?.isGit = false
-                        self?.netarrayApi(shirtingSouth, index: index + 1)
+                        self?.netarrayApi(petanimal, index: index + 1)
                     }
                 }else {
                     self?.isGit = false
-                    self?.netarrayApi(shirtingSouth, index: index + 1)
+                    self?.netarrayApi(petanimal, index: index + 1)
                 }
             } errorBlock: { [weak self] error in
                 self?.isGit = false
-                self?.netarrayApi(shirtingSouth, index: index + 1)
+                self?.netarrayApi(petanimal, index: index + 1)
             }
         }
     }

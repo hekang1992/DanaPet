@@ -178,7 +178,7 @@ class CWebViewController: BaseViewController, WKNavigationDelegate,WKScriptMessa
     }
     
     func jumpToHome() {
-        let dict = ["cleaved":"uu"]
+        let dict = ["cleaved":"cat"]
         CNotificationCenter.post(name: NSNotification.Name(SET_ROOTVC), object: nil , userInfo: dict)
     }
     

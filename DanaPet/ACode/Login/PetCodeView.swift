@@ -1,5 +1,5 @@
 //
-//  PetLoginView.swift
+//  PetCodeView.swift
 //  DanaPet
 //
 //  Created by apple on 2024/6/14.
@@ -8,17 +8,13 @@
 import UIKit
 import Lottie
 
-class PetLoginView: UIView {
-    
+class PetCodeView: UIView {
+
     var block: (() -> Void)?
     
-    lazy var scrollView: UIScrollView = {
-        let scrollView = UIScrollView()
-        scrollView.showsVerticalScrollIndicator = false
-        scrollView.showsHorizontalScrollIndicator = false
-        scrollView.contentInsetAdjustmentBehavior = .never
-        return scrollView
-    }()
+    var block1: ((UIButton) -> Void)?
+    
+    var block2: (() -> Void)?
     
     private lazy var hudView: LottieAnimationView = {
         let animationView = LottieAnimationView(name: "homeAview.json", bundle: Bundle.main)
@@ -36,7 +32,7 @@ class PetLoginView: UIView {
     
     lazy var name1Label: UILabel = {
         let nameLabel = UILabel.createLabel(font: UIFont(name: Coiny_Regular, size: 24.pix())!, textColor: UIColor("#DDD0B6"), textAlignment: .center)
-        nameLabel.text = "Log in or register with your phone number."
+        nameLabel.text = "The verification code has been sent.Please check."
         nameLabel.numberOfLines = 0
         return nameLabel
     }()
@@ -50,9 +46,9 @@ class PetLoginView: UIView {
     
     lazy var tx: UITextField = {
         let tx = UITextField()
+        tx.delegate = self
         tx.keyboardType = .numberPad
         tx.textAlignment = .center
-        tx.delegate = self
         tx.font = UIFont(name: Coiny_Regular, size: 24.pix())
         let placeholderFont = UIFont(name: Coiny_Regular, size: 20.pix())
         let foregroundColor = UIColor("#DDD0B6")
@@ -60,46 +56,43 @@ class PetLoginView: UIView {
             .font: placeholderFont!,
             .foregroundColor: foregroundColor
         ]
-        tx.attributedPlaceholder = NSAttributedString(string: "Phone number", attributes: placeholderAttributes)
+        tx.attributedPlaceholder = NSAttributedString(string: "Verification code", attributes: placeholderAttributes)
         return tx
     }()
     
     lazy var btn: UIButton = {
         let btn = UIButton(type: .custom)
-        btn.isEnabled = false
-        btn.setImage(UIImage(named: "hidelogiin"), for: .normal)
+        btn.setImage(UIImage(named: "loginpei"), for: .normal)
         btn.addTarget(self, action: #selector(nextClick), for: .touchUpInside)
         return btn
     }()
     
-    lazy var agreeBtn: UIButton = {
+    lazy var codeBtn: UIButton = {
         let btn = UIButton(type: .custom)
-        btn.setImage(UIImage(named: "Rectannormal"), for: .normal)
-        btn.addTarget(self, action: #selector(btnClick(_:)), for: .touchUpInside)
+        btn.setTitle("Send", for: .normal)
+        btn.titleLabel?.font = UIFont(name: Coiny_Regular, size: 20.pix())
+        btn.setTitleColor(UIColor("#313131"), for: .normal)
+        btn.addTarget(self, action: #selector(codeClick(_:)), for: .touchUpInside)
         return btn
     }()
     
-    lazy var titleLabel: UILabel = {
-        let nameLabel = UILabel.createLabel(font: UIFont(name: Coiny_Regular, size: 18.pix())!, textColor: UIColor("#DDD0B6"), textAlignment: .left)
-        nameLabel.text = "I have read and agree to the terms Of service"
-        nameLabel.numberOfLines = 0
-        return nameLabel
+    lazy var backBtn: UIButton = {
+        let btn = UIButton(type: .custom)
+        btn.setImage(UIImage(named: "Slicebackyr"), for: .normal)
+        btn.addTarget(self, action: #selector(backClick), for: .touchUpInside)
+        return btn
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addSubview(scrollView)
-        scrollView.addSubview(hudView)
+        addSubview(hudView)
+        hudView.addSubview(backBtn)
         hudView.addSubview(icon2ImageView)
         icon2ImageView.addSubview(name1Label)
         addSubview(icon3ImageView)
         icon3ImageView.addSubview(tx)
-        scrollView.addSubview(btn)
-        scrollView.addSubview(agreeBtn)
-        scrollView.addSubview(titleLabel)
-        scrollView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
+        icon3ImageView.addSubview(codeBtn)
+        addSubview(btn)
         hudView.snp.makeConstraints { make in
             make.top.left.right.equalToSuperview()
             make.centerX.equalToSuperview()
@@ -121,7 +114,7 @@ class PetLoginView: UIView {
             make.height.equalTo(73.pix())
         }
         tx.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.edges.equalToSuperview().inset(UIEdgeInsets(top: 0, left: 10.pix(), bottom: 0, right: 100.pix()))
         }
         btn.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
@@ -129,15 +122,14 @@ class PetLoginView: UIView {
             make.left.equalToSuperview().offset(20.pix())
             make.height.equalTo(73.pix())
         }
-        agreeBtn.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(30.pix())
-            make.size.equalTo(CGSize(width: 40.pix(), height: 40.pix()))
-            make.top.equalTo(btn.snp.bottom).offset(18.pix())
+        codeBtn.snp.makeConstraints { make in
+            make.top.right.bottom.equalToSuperview()
+            make.left.equalTo(tx.snp.right)
         }
-        titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(agreeBtn.snp.top).offset(10.pix())
-            make.left.equalTo(agreeBtn.snp.right).offset(5.pix())
-            make.right.equalToSuperview().offset(-18.pix())
+        backBtn.snp.makeConstraints { make in
+            make.size.equalTo(CGSize(width: 44.pix(), height: 44.pix()))
+            make.left.equalToSuperview().offset(10.pix())
+            make.top.equalToSuperview().offset(44.pix())
         }
     }
     
@@ -148,38 +140,23 @@ class PetLoginView: UIView {
     
 }
 
-extension PetLoginView: UITextFieldDelegate {
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        self.titleLabel.setNeedsLayout()
-        self.layoutIfNeeded()
-        let maxY = CGRectGetMaxY(self.titleLabel.frame)
-        self.scrollView.contentSize = CGSize(width: 0, height: maxY + 40.pix())
-    }
-    
-    @objc func btnClick(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected;
-        if sender.isSelected {
-            btn.isEnabled = true
-            titleLabel.textColor = UIColor("#313131")
-            sender.setImage(UIImage(named: "Rectansel"), for: .normal)
-            btn.setImage(UIImage(named: "Groupfdas"), for: .normal)
-        }else {
-            btn.isEnabled = false
-            titleLabel.textColor = UIColor("#DDD0B6")
-            sender.setImage(UIImage(named: "Rectannormal"), for: .normal)
-            btn.setImage(UIImage(named: "hidelogiin"), for: .normal)
-        }
-    }
+extension PetCodeView: UITextFieldDelegate {
     
     @objc func nextClick() {
         self.block?()
     }
+
+    @objc func codeClick(_ sender: UIButton) {
+        self.block1?(sender)
+    }
+    
+    @objc func backClick() {
+        self.block2?()
+    }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let newText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? ""
-        return newText.count <= 16
+        return newText.count <= 6
         
     }
     

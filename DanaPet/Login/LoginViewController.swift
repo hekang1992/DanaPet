@@ -109,7 +109,7 @@ class LoginViewController: BaseViewController {
                 guard let loginModel = loginModel else { return }
                 SaveLoginInfo.removeLoginInfo()
                 SaveLoginInfo.saveLoginInfo(loginModel.seizes ?? "", loginModel.postmaster ?? "")
-                let dict = ["cleaved":"uu"]
+                let dict = ["cleaved":"cat"]
                 CNotificationCenter.post(name: NSNotification.Name(SET_ROOTVC), object: nil, userInfo: dict)
             }
             self?.removeHudView()

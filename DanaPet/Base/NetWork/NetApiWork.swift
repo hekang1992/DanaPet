@@ -165,6 +165,105 @@ class NetApiWork: NSObject {
         vc.present(nav, animated: true)
     }
     
+    func showALoginVc (){
+        let loginVc = PetLoginController()
+        let vc = getCurrentUIVC()!
+        let nav = BaseNavViewController(rootViewController: loginVc)
+        nav.modalPresentationStyle = .overFullScreen
+        vc.present(nav, animated: true)
+    }
+    
 }
 
 
+extension NetApiWork {
+    
+    func requestACodeAPI(params: [String: Any]?,
+                         pageUrl: String,
+                         method: HTTPMethod,
+                         timeout: TimeInterval = 30,
+                         complete: @escaping CompleteBlock,
+                         errorBlock: @escaping NSErrorBlock){
+        var baseApiUrl = UserDefaults.standard.object(forKey: APIBAERURL) as? String ?? ""
+        if baseApiUrl.isEmpty {
+            baseApiUrl = BASE_URL
+        }else {
+            UserDefaults.standard.set(baseApiUrl, forKey: APIBAERURL)
+            UserDefaults.standard.synchronize()
+        }
+        var wholeApiUrl = baseApiUrl + pageUrl + "?" + CommonParams.getParas()
+        wholeApiUrl = wholeApiUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        AF.request(wholeApiUrl, method: method, parameters: params, headers: headers).responseData { [weak self] response in
+            switch response.result {
+            case .success(let success):
+                print("success>>>>>>>\(success)")
+                if response.data == nil {
+                    print("no data")
+                    return
+                }
+                let jsonStr = NSString(data:response.data! ,encoding: String.Encoding.utf8.rawValue)
+                let model = JSONDeserializer<BaseModel>.deserializeFrom(json: jsonStr as String?)
+                guard let model = model else { return }
+                if model.pet_code == -2 {
+                    complete(model)
+                    self?.showALoginVc()
+                }else {
+                    complete(model)
+                }
+                break
+            case .failure(let failure):
+                errorBlock(failure)
+                break
+            }
+        }
+    }
+    
+    func uploadACodeImageAPI(params: [String: Any]?,
+                        pageUrl: String,
+                        method: HTTPMethod,
+                        timeout: TimeInterval = 30,
+                        data: Data,
+                        complete: @escaping CompleteBlock,
+                        errorBlock: @escaping NSErrorBlock){
+        var baseApiUrl = UserDefaults.standard.object(forKey: APIBAERURL) as? String ?? ""
+        if baseApiUrl.isEmpty {
+            baseApiUrl = BASE_URL
+        }else {
+            UserDefaults.standard.set(baseApiUrl, forKey: APIBAERURL)
+            UserDefaults.standard.synchronize()
+        }
+        var wholeApiUrl = baseApiUrl + pageUrl + "?" + CommonParams.getParas()
+        wholeApiUrl = wholeApiUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        AF.upload(
+            multipartFormData: { multipartFormData in
+                multipartFormData.append(data, withName: "pet_img", fileName: "pet_img.png", mimeType: "image/png")
+                if let params = params {
+                    for (key, value) in params {
+                        let value :String! = value as? String
+                        multipartFormData.append(value.data(using: .utf8)!, withName: key)
+                    }
+                }
+            },
+            to: wholeApiUrl,headers: headers)
+        .validate()
+        .responseData(completionHandler: { response in
+            switch response.result {
+            case .success(let success):
+                if response.data == nil {
+                    print("no data")
+                    return
+                }
+                print("success>>image>>\(success)")
+                let jsonStr = NSString(data:response.data! ,encoding: String.Encoding.utf8.rawValue)
+                let model = JSONDeserializer<BaseModel>.deserializeFrom(json: jsonStr as String?)
+                guard let model = model else { return }
+                complete(model)
+                break
+            case .failure(let error):
+                errorBlock(error)
+                break
+            }
+        })
+    }
+    
+}

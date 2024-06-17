@@ -19,8 +19,9 @@ class CommonParams: NSObject {
         let decades: String = "app-flexi"
         let seizes: String = USER_DEFAULTS.object(forKey: LOGIN_SEIZES) as? String ?? ""
         let urgency: String = DeviceInfo.finely()
-        let cleaved: String = "uu"
-        let lastUrl: String = "dealt=\(dealt)&tombstone=\(tombstone)&bring=\(bring)&trash=\(trash)&pitched=\(pitched)&decades=\(decades)&seizes=\(seizes)&urgency=\(urgency)&cleaved=\(cleaved)"
+        let cleaved: String = "cat"
+        let pet_phone: String = seizes
+        let lastUrl: String = "dealt=\(dealt)&tombstone=\(tombstone)&bring=\(bring)&trash=\(trash)&pitched=\(pitched)&decades=\(decades)&seizes=\(seizes)&urgency=\(urgency)&cleaved=\(cleaved)&pet_phone=\(pet_phone)"
         return lastUrl
     }
 }

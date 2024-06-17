@@ -19,6 +19,10 @@ class SecondView: UIView {
     
     var block3: (() -> Void)?
     
+    var block4: (() -> Void)?
+    
+    var block5: (() -> Void)?
+    
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.showsVerticalScrollIndicator = false
@@ -63,16 +67,17 @@ class SecondView: UIView {
     
     lazy var pbtn: UIButton = {
         let btn = UIButton(type: .custom)
-        
+        btn.layer.cornerRadius = 25.pix()
         btn.setImage(UIImage(named: "Sliceleftw"), for: .normal)
-        btn.addTarget(self, action: #selector(backClick), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(photoClick), for: .touchUpInside)
         return btn
     }()
     
     lazy var ibtn: UIButton = {
         let btn = UIButton(type: .custom)
+        btn.layer.cornerRadius = 25.pix()
         btn.setImage(UIImage(named: "Slicerightfaw"), for: .normal)
-        btn.addTarget(self, action: #selector(backClick), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(caremClick), for: .touchUpInside)
         return btn
     }()
     
@@ -149,7 +154,7 @@ class SecondView: UIView {
     
     lazy var saveBtn: UIButton = {
         let saveBtn = UIButton(type: .custom)
-        saveBtn.setImage(UIImage(named: "Slicefadq"), for: .normal)
+        saveBtn.setImage(UIImage(named: "Slicesaveseldd"), for: .normal)
         saveBtn.addTarget(self, action: #selector(saveBtnClick), for: .touchUpInside)
         return saveBtn
     }()
@@ -274,6 +279,14 @@ extension SecondView {
     
     @objc func gerenClick() {
         self.block3?()
+    }
+    
+    @objc func photoClick() {
+        self.block4?()
+    }
+    
+    @objc func caremClick() {
+        self.block5?()
     }
     
     func addDictionaryToArr(_ dictionary: [String: Any]) {

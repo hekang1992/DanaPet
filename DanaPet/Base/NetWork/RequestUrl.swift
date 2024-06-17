@@ -7,7 +7,7 @@
 
 import Foundation
 
-let BASE_URL = "https://moneyasisten.xyz/daca"
+let BASE_URL = "http://147.139.173.147:9043/instan"
 let BASE_HTML_URL = "https://moneyasisten.xyz"
 let SCHEME_URL = "app.dcatan/"
 let BASE_GIT_URL = "https://raw.githubusercontent.com/dtsdark/cantatan/main/cat"
@@ -49,20 +49,16 @@ let protestedPiteously = "/cata/protestedPiteously"
 let singledTrouble = "/cata/singledTrouble"
 let fullyYoure = "/cata/fullyYoure"
 let pocketsHardworking = "/cata/pocketsHardworking"
-let shirtingSouth = "/cata/shirtingSouth"
+let petanimal = "/pet-animal"
 
 
+//pet-animal
 
-//首页
-let firstWhite = "/cata/firstWhite"
-let passedBeyond = "/cata/passedBeyond"
-let beforeStrips = "/cata/beforeStrips"
-let womanNecessary = "/cata/womanNecessary"
-let briefFlesh = "/cata/briefFlesh"
-
-//编辑投资
-let localsAfter = "/cata/localsAfter"
-//添加投资
-let lingerKnapsack = "/cata/lingerKnapsack"
-//折线图
-let belowBelow = "/cata/belowBelow"
+//ACode
+let petsendcode = "/pet-send-code"
+let petlogin = "/pet-login"
+let petlogout = "/pet-logout"
+let petuserdel = "/pet-user-del"
+let petupload = "/pet-upload"
+let petadd = "/pet-add"
+let petcheckpage = "/pet-check-page"

@@ -95,11 +95,35 @@ extension FourViewController {
     }
 
     func deleApi() {
-        
+        addHudView()
+        NetApiWork.shared.requestACodeAPI(params: [:], pageUrl: petuserdel, method: .post) { [weak self] baseModel in
+            let pet_code = baseModel.pet_code
+            let pet_msg = baseModel.pet_msg
+            if pet_code == 0 || pet_code == 00 {
+                SaveLoginInfo.removeLoginInfo()
+                self?.navigationController?.popToRootViewController(animated: true)
+            }
+            self?.removeHudView()
+            MBProgressHUD.wj_showPlainText(pet_msg ?? "", view: nil)
+        } errorBlock: { [weak self] error in
+            self?.removeHudView()
+        }
     }
     
     func logoApi() {
-        
+        addHudView()
+        NetApiWork.shared.requestACodeAPI(params: [:], pageUrl: petlogout, method: .post) { [weak self] baseModel in
+            let pet_code = baseModel.pet_code
+            let pet_msg = baseModel.pet_msg
+            if pet_code == 0 || pet_code == 00 {
+                SaveLoginInfo.removeLoginInfo()
+                self?.navigationController?.popToRootViewController(animated: true)
+            }
+            self?.removeHudView()
+            MBProgressHUD.wj_showPlainText(pet_msg ?? "", view: nil)
+        } errorBlock: { [weak self] error in
+            self?.removeHudView()
+        }
     }
     
 }

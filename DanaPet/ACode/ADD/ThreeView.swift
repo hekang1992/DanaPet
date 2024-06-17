@@ -50,7 +50,7 @@ class ThreeView: UIView {
     
     lazy var maoImageView: UIImageView = {
         let maoImageView = UIImageView()
-        maoImageView.contentMode = .center
+        maoImageView.contentMode = .scaleAspectFit
         maoImageView.image = UIImage(named: "Slicemao")
         return maoImageView
     }()
@@ -74,6 +74,11 @@ class ThreeView: UIView {
         return addBtn
     }()
     
+    lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .grouped)
+        tableView.backgroundColor = .red
+        return tableView
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -86,6 +91,7 @@ class ThreeView: UIView {
         bgImageView.addSubview(whiimageView)
         whiimageView.addSubview(timeLabel)
         addSubview(addBtn)
+        addSubview(tableView)
         bgImageView.snp.makeConstraints { make in
             make.left.right.top.equalToSuperview()
             make.height.equalTo(340.pix())
@@ -124,11 +130,16 @@ class ThreeView: UIView {
             make.height.equalTo(25.pix())
             make.bottom.equalToSuperview().offset(-25.pix())
         }
+        tableView.snp.makeConstraints { make in
+            make.left.bottom.right.equalToSuperview()
+            make.top.equalTo(timeLabel.snp.bottom).offset(4.pix())
+        }
         addBtn.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(20.pix())
             make.bottom.equalToSuperview().offset(-60.pix())
             make.size.equalTo(CGSize(width: 100.pix(), height: 55.pix()))
         }
+        
     }
     
     required init?(coder: NSCoder) {

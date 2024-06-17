@@ -14,6 +14,11 @@ class BaseModel: HandyJSON {
     var awareness: Int?
     var edges: String?
     var hovered: [String: Any]?
+    
+    var pet_code: Int?
+    var pet_msg: String?
+    var pet_data: [String: Any]?
+    
 }
 
 class HoveredModel: HandyJSON {
@@ -35,6 +40,7 @@ class HoveredModel: HandyJSON {
     var galloped: String?
     var app_name: String?
     var app_logo: String?
+    var animal: String?
     
     var incomes: [IncomesModel]?
     var circumstance: CircumstanceModel?
