@@ -10,6 +10,10 @@ import UIKit
 class PetButtonView: UIView {
     
     var block: (() -> Void)?
+    
+    var block1: (() -> Void)?
+    
+    var petID: String?
 
     lazy var icon: UIImageView = {
         let icon = UIImageView()
@@ -28,11 +32,20 @@ class PetButtonView: UIView {
         return btn
     }()
     
+    lazy var btn1: UIButton = {
+        let btn = UIButton(type: .custom)
+        btn.isHidden = true
+        btn.setBackgroundImage(UIImage(named: "Slicechare"), for: .normal)
+        btn.addTarget(self, action: #selector(btnClick1), for: .touchUpInside)
+        return btn
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(icon)
         addSubview(nameLabel)
         addSubview(btn)
+        addSubview(btn1)
         icon.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(14.pix())
             make.bottom.equalToSuperview().offset(-2.pix())
@@ -45,6 +58,11 @@ class PetButtonView: UIView {
         }
         btn.snp.makeConstraints { make in
             make.edges.equalToSuperview()
+        }
+        btn1.snp.makeConstraints { make in
+            make.size.equalTo(CGSize(width: 42.pix(), height: 30.pix()))
+            make.top.equalToSuperview().offset(-10.pix())
+            make.right.equalToSuperview().offset(10.pix())
         }
     }
     
@@ -59,5 +77,9 @@ extension PetButtonView {
     
     @objc func btnClick() {
         self.block?()
+    }
+    
+    @objc func btnClick1() {
+        self.block1?()
     }
 }

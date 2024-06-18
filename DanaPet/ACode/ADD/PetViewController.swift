@@ -21,7 +21,6 @@ class PetViewController: BaseViewController{
         homeView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        
         homeView.block1 = { [weak self] in
             if IS_LOGIN {
                 self?.nextVc()
@@ -30,7 +29,6 @@ class PetViewController: BaseViewController{
             }
             
         }
-        
         homeView.block2 = { [weak self] in
             if IS_LOGIN {
                 self?.nextVc()
@@ -38,16 +36,21 @@ class PetViewController: BaseViewController{
                 self?.loginVc()
             }
         }
-        
         homeView.block3 = { [weak self] str1, str2, str3 in
             self?.checkVc(str1, str2, str3)
+        }
+        homeView.block4 = { [weak self] str1 in
+            self?.delePet(str1)
+        }
+        homeView.block5 = { [weak self] str1 in
+            self?.allPetApi(str1)
         }
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        allPetApi()
+        allPetApi("")
     }
     
 }
@@ -73,9 +76,10 @@ extension PetViewController {
         self.navigationController?.pushViewController(threeVc, animated: true)
     }
     
-    func allPetApi() {
+    func allPetApi(_ str: String) {
         addHudView()
-        NetApiWork.shared.requestACodeAPI(params: [:], pageUrl: pethome, method: .post) { [weak self] baseModel in
+        let dict = ["pet_name": str]
+        NetApiWork.shared.requestACodeAPI(params: dict, pageUrl: pethome, method: .post) { [weak self] baseModel in
             let pet_code = baseModel.pet_code
             let pet_msg = baseModel.pet_msg
             if pet_code == 0 || pet_code == 00 {
@@ -89,6 +93,23 @@ extension PetViewController {
             self?.removeHudView()
         }
         
+    }
+    
+    func delePet(_ petid: String) {
+        let dict = ["pet_id": petid]
+        addHudView()
+        NetApiWork.shared.requestACodeAPI(params: dict, pageUrl: petdel, method: .post) { [weak self] baseModel in
+            let pet_code = baseModel.pet_code
+            let pet_msg = baseModel.pet_msg
+            if pet_code == 0 || pet_code == 00 {
+                self?.allPetApi("")
+            }
+            self?.removeHudView()
+            MBProgressHUD.wj_showPlainText(pet_msg ?? "", view: nil)
+        } errorBlock: { [weak self] error in
+            self?.removeHudView()
+        }
+
     }
     
 }

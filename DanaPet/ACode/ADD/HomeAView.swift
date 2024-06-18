@@ -17,6 +17,10 @@ class HomeAView: UIView {
     
     var block3: ((String, String, String) -> Void)?
     
+    var block4: ((String) -> Void)?
+    
+    var block5: ((String) -> Void)?
+    
     let buttonsPerRow = 2
     
     var array: [Any]? {
@@ -110,6 +114,9 @@ class HomeAView: UIView {
         let conView = PetCustomView()
         conView.block = { [weak self] str1, str2, str3 in
             self?.block3?(str1, str2, str3)
+        }
+        conView.block1 = { [weak self] str1 in
+            self?.block4?(str1)
         }
         return conView
     }()
@@ -207,6 +214,7 @@ extension HomeAView: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        self.block5?(textField.text ?? "")
         return true
     }
 }

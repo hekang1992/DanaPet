@@ -64,3 +64,6 @@ let petupload = "/pet-upload"
 let petadd = "/pet-add"
 let petcheckpage = "/pet-check-page"
 let petcheck = "/pet-check"
+let petdel = "/pet-del"
+
+

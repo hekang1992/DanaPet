@@ -12,11 +12,15 @@ class PetCustomView: UIView {
     
     var block:((String, String, String) -> Void)?
     
+    var block1:((String) -> Void)?
+    
     var array: [Any]? {
         didSet {
             setupUI()
         }
     }
+    
+    var view: PetButtonView?
     
     private var buttons: [UIView] = []
     
@@ -48,6 +52,7 @@ class PetCustomView: UIView {
             let pet_id: String = dict["pet_id"] as! String
             bgView.icon.kf.setImage(with: URL(string: icon ))
             bgView.nameLabel.text = nameStr
+            bgView.petID = pet_id
             bgView.backgroundColor = UIColor("#FFD817")
             bgView.layer.cornerRadius = 25.pix()
             bgView.layer.borderWidth = 4.pix()
@@ -55,6 +60,8 @@ class PetCustomView: UIView {
             bgView.block = { [weak self] in
                 self?.block?(pet_id, icon, nameStr)
             }
+            let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
+            bgView.addGestureRecognizer(longPressRecognizer)
             addSubview(bgView)
             buttons.append(bgView)
             let row = i / columns
@@ -79,5 +86,23 @@ class PetCustomView: UIView {
 
 
 extension PetCustomView {
+    
+    @objc func handleLongPress(gestureRecognizer: UILongPressGestureRecognizer) {
+        if gestureRecognizer.state == .began {
+            if let view = gestureRecognizer.view as? PetButtonView {
+                self.view = view
+                view.btn1.isHidden = false
+                view.block1 = {
+                    self.block1?(self.view?.petID ?? "")
+                }
+            }
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let view = self.view {
+            view.btn1.isHidden = true
+        }
+    }
     
 }
