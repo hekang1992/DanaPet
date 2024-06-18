@@ -75,7 +75,7 @@ class PetCustomView: UIView {
                     make.top.equalTo(buttons[i - columns].snp.bottom).offset(20.pix())
                 }
                 if column == 0 { 
-                    make.left.equalToSuperview().offset(10.pix())
+                    make.left.equalToSuperview().offset(1.pix())
                 }else {
                     make.left.equalTo(buttons[i - 1].snp.right).offset(15.pix())
                 }

@@ -90,6 +90,20 @@ class ThreeView: UIView {
         return tableView
     }()
     
+    lazy var leftBtn: UIButton = {
+        let leftBtn = UIButton(type: .custom)
+        leftBtn.setImage(UIImage(named: "Sliceleftbtn"), for: .normal)
+        leftBtn.addTarget(self, action: #selector(btnleftClick), for: .touchUpInside)
+        return leftBtn
+    }()
+    
+    lazy var rightBtn: UIButton = {
+        let rightBtn = UIButton(type: .custom)
+        rightBtn.setImage(UIImage(named: "Slicerightbtn"), for: .normal)
+        rightBtn.addTarget(self, action: #selector(btnrightClick), for: .touchUpInside)
+        return rightBtn
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(bgImageView)
@@ -99,6 +113,8 @@ class ThreeView: UIView {
         bgImageView.addSubview(peopleBtn)
         bgImageView.addSubview(maoImageView)
         bgImageView.addSubview(whiimageView)
+        bgImageView.addSubview(leftBtn)
+        bgImageView.addSubview(rightBtn)
         whiimageView.addSubview(timeLabel)
         addSubview(tableView)
         addSubview(addBtn)
@@ -130,6 +146,16 @@ class ThreeView: UIView {
             make.centerX.equalToSuperview()
             make.size.equalTo(CGSize(width: 275.pix(), height: 231.pix()))
             make.bottom.equalToSuperview().offset(-20.pix())
+        }
+        leftBtn.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(20.pix())
+            make.size.equalTo(CGSize(width: 11.pix(), height: 26.pix()))
+            make.centerY.equalToSuperview()
+        }
+        rightBtn.snp.makeConstraints { make in
+            make.right.equalToSuperview().offset(-20.pix())
+            make.size.equalTo(CGSize(width: 11.pix(), height: 26.pix()))
+            make.centerY.equalToSuperview()
         }
         whiimageView.snp.makeConstraints { make in
             make.left.bottom.right.equalToSuperview()
@@ -236,6 +262,14 @@ extension ThreeView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return nil
+    }
+    
+    @objc func btnleftClick() {
+        
+    }
+    
+    @objc func btnrightClick() {
+        
     }
     
 }
