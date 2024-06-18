@@ -39,6 +39,10 @@ class PetViewController: BaseViewController{
             }
         }
         
+        homeView.block3 = { [weak self] str1, str2, str3 in
+            self?.checkVc(str1, str2, str3)
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -61,6 +65,14 @@ extension PetViewController {
         self.navigationController?.pushViewController(loginVc, animated: true)
     }
     
+    func checkVc(_ pet_id: String, _ pet_img: String, _ pet_name: String) {
+        let threeVc = ThreeViewController()
+        threeVc.pet_id = pet_id
+        threeVc.pet_img = pet_img
+        threeVc.pet_name = pet_name
+        self.navigationController?.pushViewController(threeVc, animated: true)
+    }
+    
     func allPetApi() {
         addHudView()
         NetApiWork.shared.requestACodeAPI(params: [:], pageUrl: pethome, method: .post) { [weak self] baseModel in
@@ -76,7 +88,7 @@ extension PetViewController {
         } errorBlock: { [weak self] error in
             self?.removeHudView()
         }
-
+        
     }
     
 }

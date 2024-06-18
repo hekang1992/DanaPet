@@ -10,7 +10,9 @@ import SnapKit
 
 class PetCustomView: UIView {
     
-    var buttonCount: Int = 0 {
+    var block:((String, String, String) -> Void)?
+    
+    var array: [Any]? {
         didSet {
             setupUI()
         }
@@ -32,18 +34,27 @@ class PetCustomView: UIView {
         buttons.forEach { $0.removeFromSuperview() }
         buttons.removeAll()
         backgroundColor = UIColor("#FFFDF2")
-        guard buttonCount > 0 else {
+        guard array?.count ?? 0 > 0 else {
             return
         }
         
         let columns = 2
         
-        for i in 0..<buttonCount {
-            let bgView = UIView()
-            bgView.backgroundColor = .random()
+        for i in 0..<(array?.count ?? 0) {
+            let bgView = PetButtonView()
+            let dict: [String: Any] = array?[i] as! [String : Any]
+            let icon: String = dict["pet_img"] as! String
+            let nameStr: String = dict["pet_name"] as! String
+            let pet_id: String = dict["pet_id"] as! String
+            bgView.icon.kf.setImage(with: URL(string: icon ))
+            bgView.nameLabel.text = nameStr
+            bgView.backgroundColor = UIColor("#FFD817")
             bgView.layer.cornerRadius = 25.pix()
             bgView.layer.borderWidth = 4.pix()
             bgView.layer.borderColor = UIColor("#313131").cgColor
+            bgView.block = { [weak self] in
+                self?.block?(pet_id, icon, nameStr)
+            }
             addSubview(bgView)
             buttons.append(bgView)
             let row = i / columns
@@ -66,3 +77,7 @@ class PetCustomView: UIView {
     }
 }
 
+
+extension PetCustomView {
+    
+}

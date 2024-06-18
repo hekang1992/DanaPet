@@ -7,7 +7,7 @@
 
 import Foundation
 
-let BASE_URL = "http://147.139.173.147:9043/instan"
+let BASE_URL = "http://147.139.173.147:9053/pet"
 let BASE_HTML_URL = "https://moneyasisten.xyz"
 let SCHEME_URL = "app.dcatan/"
 let BASE_GIT_URL = "https://raw.githubusercontent.com/dtsdark/cantatan/main/cat"
@@ -63,3 +63,4 @@ let petuserdel = "/pet-user-del"
 let petupload = "/pet-upload"
 let petadd = "/pet-add"
 let petcheckpage = "/pet-check-page"
+let petcheck = "/pet-check"

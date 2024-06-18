@@ -1,16 +1,16 @@
 //
-//  PetCheckViewCell.swift
+//  PetTwoCheckCell.swift
 //  DanaPet
 //
-//  Created by apple on 2024/6/17.
+//  Created by apple on 2024/6/18.
 //
 
 import UIKit
 
-class PetCheckViewCell: UITableViewCell {
+class PetTwoCheckCell: UITableViewCell {
     
     var block: (() -> Void)?
-    
+
     lazy var bgView: UIView = {
         let bgView = UIView()
         bgView.backgroundColor = UIColor("#FFFDF2")
@@ -45,16 +45,6 @@ class PetCheckViewCell: UITableViewCell {
         return name1
     }()
     
-    lazy var name5: UILabel = {
-        let name1 = UILabel.createLabel(font: UIFont(name: Coiny_Regular, size: 13.pix())!, textColor: UIColor("#DDD0B6"), textAlignment: .left)
-        return name1
-    }()
-    
-    lazy var name6: UILabel = {
-        let name1 = UILabel.createLabel(font: UIFont(name: Coiny_Regular, size: 16.pix())!, textColor: UIColor("#313131"), textAlignment: .left)
-        return name1
-    }()
-    
     lazy var check_btn: UIButton = {
         let check_btn = UIButton(type: .custom)
         check_btn.addTarget(self, action: #selector(checkBtnClick), for: .touchUpInside)
@@ -69,8 +59,6 @@ class PetCheckViewCell: UITableViewCell {
         bgView.addSubview(name2)
         bgView.addSubview(name3)
         bgView.addSubview(name4)
-        bgView.addSubview(name5)
-        bgView.addSubview(name6)
         bgView.addSubview(check_btn)
         bgView.snp.makeConstraints { make in
             make.top.equalToSuperview()
@@ -84,7 +72,7 @@ class PetCheckViewCell: UITableViewCell {
             make.left.equalToSuperview().offset(27.pix())
         }
         name1.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(14.pix())
+            make.top.equalToSuperview().offset(38.pix())
             make.left.equalTo(icon.snp.right).offset(21.pix())
             make.height.equalTo(15.pix())
         }
@@ -103,16 +91,6 @@ class PetCheckViewCell: UITableViewCell {
             make.left.equalTo(icon.snp.right).offset(21.pix())
             make.height.equalTo(18.pix())
         }
-        name5.snp.makeConstraints { make in
-            make.top.equalTo(name4.snp.bottom).offset(9.pix())
-            make.left.equalTo(icon.snp.right).offset(21.pix())
-            make.height.equalTo(15.pix())
-        }
-        name6.snp.makeConstraints { make in
-            make.top.equalTo(name5.snp.bottom).offset(5.pix())
-            make.left.equalTo(icon.snp.right).offset(21.pix())
-            make.height.equalTo(18.pix())
-        }
         check_btn.snp.makeConstraints { make in
             make.right.equalToSuperview().offset(-8.pix())
             make.top.equalToSuperview().offset(8.pix())
@@ -124,14 +102,14 @@ class PetCheckViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
 }
 
 
-extension PetCheckViewCell {
+extension PetTwoCheckCell {
+    
     
     @objc func checkBtnClick() {
         self.block?()
     }
-    
 }

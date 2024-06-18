@@ -66,7 +66,7 @@ extension FourViewController {
         let alertVC = TYAlertController(alert: popView, preferredStyle: .alert)
         self.present(alertVC!, animated: true)
         popView.block = { [weak self] in
-            self?.delay(1.0, closure: {
+            self?.delay(0.25, closure: {
                 self?.dismiss(animated: true, completion: {
                     self?.deleApi()
                 })
@@ -83,7 +83,7 @@ extension FourViewController {
         let alertVC = TYAlertController(alert: popView, preferredStyle: .alert)
         self.present(alertVC!, animated: true)
         popView.block = { [weak self] in
-            self?.delay(1.0, closure: {
+            self?.delay(0.25, closure: {
                 self?.dismiss(animated: true, completion: {
                     self?.logoApi()
                 })

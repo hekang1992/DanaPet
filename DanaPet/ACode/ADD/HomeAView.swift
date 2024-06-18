@@ -11,23 +11,25 @@ import UIColor_Hex_Swift
 
 class HomeAView: UIView {
     
+    var block1: (() -> Void)?
+    
+    var block2: (() -> Void)?
+    
+    var block3: ((String, String, String) -> Void)?
+    
     let buttonsPerRow = 2
     
     var array: [Any]? {
         didSet {
             let count = array?.count ?? 0
             let columns = (count + buttonsPerRow - 1) / buttonsPerRow + 1
-            conView.buttonCount = array?.count ?? 0
+            conView.array = array
             conView.snp.updateConstraints { make in
                 make.height.equalTo(CGFloat(columns) * 73.pix())
             }
             self.layoutSubviews()
         }
     }
-    
-    var block1: (() -> Void)?
-    
-    var block2: (() -> Void)?
 
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -106,7 +108,9 @@ class HomeAView: UIView {
     
     lazy var conView: PetCustomView = {
         let conView = PetCustomView()
-        conView.backgroundColor = .red
+        conView.block = { [weak self] str1, str2, str3 in
+            self?.block3?(str1, str2, str3)
+        }
         return conView
     }()
     

@@ -9,6 +9,10 @@ import UIKit
 
 class ThreeView: UIView {
     
+    var block1: ((String, String) -> Void)?
+    
+    var array: [Any]?
+    
     var block: (() -> Void)?
     
     var naozhongblock: (() -> Void)?
@@ -24,7 +28,7 @@ class ThreeView: UIView {
     
     lazy var nameLabel: UILabel = {
         let nameLabel = UILabel.createLabel(font: UIFont(name: Coiny_Regular, size: 24.pix())!, textColor: UIColor("#313131"), textAlignment: .left)
-        nameLabel.text = "Luma"
+        nameLabel.text = ""
         return nameLabel
     }()
     
@@ -77,6 +81,7 @@ class ThreeView: UIView {
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.register(PetCheckViewCell.self, forCellReuseIdentifier: "PetCheckViewCell")
+        tableView.register(PetTwoCheckCell.self, forCellReuseIdentifier: "PetTwoCheckCell")
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = UIColor("#FFFDF2")
@@ -123,8 +128,8 @@ class ThreeView: UIView {
         }
         maoImageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.size.equalTo(CGSize(width: 275.pix(), height: 241.pix()))
-            make.bottom.equalToSuperview().offset(-30.pix())
+            make.size.equalTo(CGSize(width: 275.pix(), height: 231.pix()))
+            make.bottom.equalToSuperview().offset(-20.pix())
         }
         whiimageView.snp.makeConstraints { make in
             make.left.bottom.right.equalToSuperview()
@@ -177,14 +182,48 @@ extension ThreeView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = PetCheckViewCell(style: .subtitle, reuseIdentifier: "PetCheckViewCell")
-        cell.backgroundColor = .clear
-        cell.selectionStyle = .none
-        return cell
+        guard let dict = array?[indexPath.row] as? [String: Any] else { return UITableViewCell() }
+        
+        let option_num = dict["option_num"] as! String
+        if option_num == "3" {
+            let cell = PetCheckViewCell(style: .subtitle, reuseIdentifier: "PetCheckViewCell")
+            cell.backgroundColor = .clear
+            cell.selectionStyle = .none
+            if let dict = array?[indexPath.row] as? [String: Any] {
+                cell.icon.kf.setImage(with: URL(string: dict["pet_img"] as! String))
+                cell.name1.text = dict["amount_desc"] as? String
+                cell.name2.text = dict["food1"] as? String
+                cell.name3.text = dict["clean_desc"] as? String
+                cell.name4.text = dict["food2"] as? String
+                cell.name5.text = dict["refill_desc"] as? String
+                cell.name6.text = dict["food3"] as? String
+                cell.check_btn.kf.setImage(with: URL(string: dict["check_img"] as? String ?? ""), for: .normal)
+                cell.block = { [weak self] in
+                    self?.block1?(dict["pet_type"] as? String ?? "", dict["is_check"] as? String ?? "")
+                }
+            }
+            return cell
+        }else {
+            let cell = PetTwoCheckCell(style: .subtitle, reuseIdentifier: "PetTwoCheckCell")
+            cell.backgroundColor = .clear
+            cell.selectionStyle = .none
+            if let dict = array?[indexPath.row] as? [String: Any] {
+                cell.icon.kf.setImage(with: URL(string: dict["pet_img"] as! String))
+                cell.name1.text = dict["amount_desc"] as? String
+                cell.name2.text = dict["food1"] as? String
+                cell.name3.text = dict["clean_desc"] as? String
+                cell.name4.text = dict["food2"] as? String
+                cell.check_btn.kf.setImage(with: URL(string: dict["check_img"] as? String ?? ""), for: .normal)
+                cell.block = { [weak self] in
+                    self?.block1?(dict["pet_type"] as? String ?? "", dict["is_check"] as? String ?? "")
+                }
+            }
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return array?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
