@@ -13,7 +13,9 @@ typealias ProductUrlBlock = (String) -> Void
 class HomeTwoView: UIView, GKCycleScrollViewDataSource,UITableViewDelegate,UITableViewDataSource,GKCycleScrollViewDelegate {
     
     var block: ProductUrlBlock?
+    
     var block1: ProductUrlBlock?
+    
     var block2: ProductUrlBlock?
     
     var largeDataModel: [DrawingModel]?
@@ -28,7 +30,6 @@ class HomeTwoView: UIView, GKCycleScrollViewDataSource,UITableViewDelegate,UITab
     
     lazy var iconImageView: UIImageView = {
         let iconImageView = UIImageView()
-        iconImageView.image = UIImage(named: "qweerc")
         iconImageView.layer.cornerRadius = 8.pix()
         iconImageView.layer.masksToBounds = true
         return iconImageView
@@ -36,7 +37,7 @@ class HomeTwoView: UIView, GKCycleScrollViewDataSource,UITableViewDelegate,UITab
     
     lazy var label: UILabel = {
         let label = UILabel.createLabel(font: UIFont.systemFont(ofSize: 18.pix(), weight: .semibold), textColor: .black, textAlignment: .left)
-        label.text = "MoneyAsisten"
+        label.text = ""
         return label
     }()
     
@@ -114,7 +115,7 @@ class HomeTwoView: UIView, GKCycleScrollViewDataSource,UITableViewDelegate,UITab
         let model = largeDataModel?[indexPath.section]
         let typeStr = model?.masters
         self.label.text = self.type
-        let imageUrl = URL(string: model?.auctions ?? "")
+        let imageUrl = URL(string: applogo ?? "")
         self.iconImageView.kf.setImage(with: imageUrl, placeholder: UIImage(named: "qweerc"))
         if typeStr == "1" || typeStr == "3" {
             let cell = ProductCell(style: .subtitle, reuseIdentifier: ProductCellID)
@@ -211,7 +212,7 @@ class HomeTwoView: UIView, GKCycleScrollViewDataSource,UITableViewDelegate,UITab
             cell = GKCycleScrollViewCell()
         }
         let model = largeDataModel1?[index]
-        let imageUrl = URL(string: applogo ?? "")
+        let imageUrl = URL(string: model?.favors ?? "")
         cell?.imageView.kf.setImage(with: imageUrl, placeholder: UIImage(named: "bannetN"))
         return cell!
     }
