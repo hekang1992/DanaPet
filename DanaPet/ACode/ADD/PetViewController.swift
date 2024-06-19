@@ -45,7 +45,7 @@ class PetViewController: BaseViewController{
         homeView.block5 = { [weak self] str1 in
             self?.allPetApi(str1)
         }
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,6 +57,13 @@ class PetViewController: BaseViewController{
 
 
 extension PetViewController {
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        // 获取 UITextField 的文字内容
+        if let text = self.homeView.tx.text {
+            allPetApi(text)
+        }
+    }
     
     func nextVc() {
         let sendVc = SecondController()
@@ -109,7 +116,7 @@ extension PetViewController {
         } errorBlock: { [weak self] error in
             self?.removeHudView()
         }
-
+        
     }
     
 }

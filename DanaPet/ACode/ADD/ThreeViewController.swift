@@ -17,15 +17,17 @@ class ThreeViewController: BaseViewController {
     
     var pet_name: String = ""
     
+    var array: [Any]?
+    
     lazy var threeView: ThreeView = {
         let threeView = ThreeView()
         threeView.backgroundColor = UIColor("#FFFDF2")
         return threeView
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         view.addSubview(threeView)
         threeView.block = { [weak self] in
@@ -34,6 +36,9 @@ class ThreeViewController: BaseViewController {
         threeView.gerenblock = { [weak self] in
             let fourVc = FourViewController()
             self?.navigationController?.pushViewController(fourVc, animated: true)
+        }
+        threeView.naozhongblock = { [weak self] in
+            self?.postNoti()
         }
         threeView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -44,18 +49,24 @@ class ThreeViewController: BaseViewController {
         threeView.block1 = { [weak self] str, ischeck in
             self?.checkType(petid: self?.pet_id ?? "", pettype: str, ischeck: ischeck)
         }
+        threeView.leftblock = {
+            
+        }
+        threeView.rightblock = {
+            
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         checkApi()
     }
-
+    
 }
 
 
 extension ThreeViewController {
-
+    
     func checkApi() {
         addHudView()
         let dict = ["pet_id": pet_id]
@@ -82,7 +93,7 @@ extension ThreeViewController {
         } errorBlock: { [weak self] error in
             self?.removeHudView()
         }
-
+        
     }
     
     func checkType(petid: String, pettype: String, ischeck: String) {
@@ -106,9 +117,32 @@ extension ThreeViewController {
         } errorBlock: { [weak self] error in
             self?.removeHudView()
         }
-
+        
+    }
+    
+    func postNoti() {
+        let center = UNUserNotificationCenter.current()
+        center.removeAllPendingNotificationRequests()
+        let content = UNMutableNotificationContent()
+        content.title = "Reminder"
+        content.body = "It's 9 AM! Time to do something."
+        content.sound = UNNotificationSound.default
+        var dateComponents = DateComponents()
+        dateComponents.hour = 9
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        let request = UNNotificationRequest(identifier: "MorningNotification", content: content, trigger: trigger)
+        center.add(request) { error in
+            if let error = error {
+                print("Error adding notification: \(error.localizedDescription)")
+            } else {
+                let alertController = UIAlertController(title: "Reminder", message: "It's 9 AM! Time to do something", preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                DispatchQueue.main.async {
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            }
+        }
     }
     
 }
-
 

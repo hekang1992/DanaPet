@@ -18,6 +18,10 @@ class ThreeView: UIView {
     var naozhongblock: (() -> Void)?
     
     var gerenblock: (() -> Void)?
+    
+    var leftblock: (() -> Void)?
+    
+    var rightblock: (() -> Void)?
 
     lazy var bgImageView: UIImageView = {
         let bgImageView = UIImageView()
@@ -113,8 +117,8 @@ class ThreeView: UIView {
         bgImageView.addSubview(peopleBtn)
         bgImageView.addSubview(maoImageView)
         bgImageView.addSubview(whiimageView)
-        bgImageView.addSubview(leftBtn)
-        bgImageView.addSubview(rightBtn)
+//        bgImageView.addSubview(leftBtn)
+//        bgImageView.addSubview(rightBtn)
         whiimageView.addSubview(timeLabel)
         addSubview(tableView)
         addSubview(addBtn)
@@ -147,16 +151,16 @@ class ThreeView: UIView {
             make.size.equalTo(CGSize(width: 275.pix(), height: 231.pix()))
             make.bottom.equalToSuperview().offset(-20.pix())
         }
-        leftBtn.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(20.pix())
-            make.size.equalTo(CGSize(width: 11.pix(), height: 26.pix()))
-            make.centerY.equalToSuperview()
-        }
-        rightBtn.snp.makeConstraints { make in
-            make.right.equalToSuperview().offset(-20.pix())
-            make.size.equalTo(CGSize(width: 11.pix(), height: 26.pix()))
-            make.centerY.equalToSuperview()
-        }
+//        leftBtn.snp.makeConstraints { make in
+//            make.left.equalToSuperview().offset(20.pix())
+//            make.size.equalTo(CGSize(width: 11.pix(), height: 26.pix()))
+//            make.centerY.equalToSuperview()
+//        }
+//        rightBtn.snp.makeConstraints { make in
+//            make.right.equalToSuperview().offset(-20.pix())
+//            make.size.equalTo(CGSize(width: 11.pix(), height: 26.pix()))
+//            make.centerY.equalToSuperview()
+//        }
         whiimageView.snp.makeConstraints { make in
             make.left.bottom.right.equalToSuperview()
             make.height.equalTo(80.pix())
@@ -209,7 +213,6 @@ extension ThreeView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let dict = array?[indexPath.row] as? [String: Any] else { return UITableViewCell() }
-        
         let option_num = dict["option_num"] as! String
         if option_num == "3" {
             let cell = PetCheckViewCell(style: .subtitle, reuseIdentifier: "PetCheckViewCell")
@@ -265,11 +268,11 @@ extension ThreeView: UITableViewDelegate, UITableViewDataSource {
     }
     
     @objc func btnleftClick() {
-        
+        self.leftblock?()
     }
     
     @objc func btnrightClick() {
-        
+        self.rightblock?()
     }
     
 }

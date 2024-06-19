@@ -40,8 +40,7 @@ class SecondController: BaseViewController {
             self?.navigationController?.pushViewController(gerenVc, animated: true)
         }
         sendView.block3 = { [weak self] in
-            let usetVc = FourViewController()
-            self?.navigationController?.pushViewController(usetVc, animated: true)
+            self?.postNoti()
         }
         sendView.block4 = { [weak self] in
             self?.xiangce()
@@ -250,6 +249,30 @@ extension SecondController: UIImagePickerControllerDelegate {
             MBProgressHUD.wj_showPlainText(pet_msg ?? "", view: nil)
         } errorBlock: { [weak self] error in
             self?.removeHudView()
+        }
+    }
+    
+    func postNoti() {
+        let center = UNUserNotificationCenter.current()
+        center.removeAllPendingNotificationRequests()
+        let content = UNMutableNotificationContent()
+        content.title = "Reminder"
+        content.body = "It's 9 AM! Time to do something."
+        content.sound = UNNotificationSound.default
+        var dateComponents = DateComponents()
+        dateComponents.hour = 9
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        let request = UNNotificationRequest(identifier: "MorningNotification", content: content, trigger: trigger)
+        center.add(request) { error in
+            if let error = error {
+                print("Error adding notification: \(error.localizedDescription)")
+            } else {
+                let alertController = UIAlertController(title: "Reminder", message: "It's 9 AM! Time to do something", preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                DispatchQueue.main.async {
+                    self.present(alertController, animated: true, completion: nil)
+                }                
+            }
         }
     }
 

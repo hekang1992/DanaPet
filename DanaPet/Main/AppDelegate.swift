@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow.init(frame: UIScreen.main.bounds)
         noti()
         keyboardManager()
-//        getFontNames()
+        //        getFontNames()
         getPush()
         window?.rootViewController = FristViewController()
         window?.makeKeyAndVisible()
