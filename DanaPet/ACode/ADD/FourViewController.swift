@@ -29,10 +29,10 @@ class FourViewController: BaseViewController {
             self?.navigationController?.popToRootViewController(animated: true)
         }
         fourView.block2 = { [weak self] in
-            
+            self?.pushWebVC("https://www.baidu.com", "")
         }
         fourView.block3 = { [weak self] in
-            
+            self?.pushWebVC("https://www.baidu.com", "")
         }
         fourView.block4 = { [weak self] in
             self?.deleView()

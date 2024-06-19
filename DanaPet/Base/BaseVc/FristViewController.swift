@@ -187,9 +187,8 @@ extension FristViewController {
                     if cleaved == "cat" {//b面
                         self?.bmian()
                         self?.isGit = true
-                    }else if cleaved == "ue" {
-//                        self?.amian()
-                        self?.bmian()
+                    }else if cleaved == "dog" {
+                        self?.amian()
                         self?.isGit = true
                     }else {
                         self?.isGit = false
