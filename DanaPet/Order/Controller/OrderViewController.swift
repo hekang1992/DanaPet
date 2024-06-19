@@ -42,7 +42,7 @@ class OrderViewController: BaseViewController {
         }
         self.orderView.block = { [weak self] model in
             if let josiah: String = model.josiah {
-                if josiah.contains("app.dcatan/terrainShoot") {
+                if josiah.contains("app.pet/petumbrellaUgliJackfruit") {
                     let splitedArray = josiah.components(separatedBy: "bidders=")
                     self?.getProductDetailInfo(splitedArray.last ?? "",josiah,"")
                 }else{

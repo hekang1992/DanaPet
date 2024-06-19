@@ -69,22 +69,22 @@ class JDViewController: BaseViewController {
     }
     
     func stateInfo(_ type: String) {
-        if type == "dcan1" {
-            jdView.typeImageView.currentState = .dcan1
-        }else if type == "dcan2" {
-            jdView.typeImageView.currentState = .dcan2
+        if type == "petf" {
+            jdView.typeImageView.currentState = .petf
+        }else if type == "petg" {
+            jdView.typeImageView.currentState = .petg
             jdView.typeView1.bgImageView.image = UIImage(named: "abc5")
-        }else if type == "dcan3" {
-            jdView.typeImageView.currentState = .dcan3
+        }else if type == "peth" {
+            jdView.typeImageView.currentState = .peth
             jdView.typeView1.bgImageView.image = UIImage(named: "abc5")
             jdView.typeView2.bgImageView.image = UIImage(named: "abc5")
-        }else if type == "dcan4" {
-            jdView.typeImageView.currentState = .dcan4
+        }else if type == "peti" {
+            jdView.typeImageView.currentState = .peti
             jdView.typeView1.bgImageView.image = UIImage(named: "abc5")
             jdView.typeView2.bgImageView.image = UIImage(named: "abc5")
             jdView.typeView3.bgImageView.image = UIImage(named: "abc5")
         }else{
-            jdView.typeImageView.currentState = .dcan4
+            jdView.typeImageView.currentState = .peti
             jdView.typeView1.bgImageView.image = UIImage(named: "abc5")
             jdView.typeView2.bgImageView.image = UIImage(named: "abc5")
             jdView.typeView3.bgImageView.image = UIImage(named: "abc5")
@@ -93,20 +93,20 @@ class JDViewController: BaseViewController {
     }
     
     func nextVc() {
-        if self.picture == "dcan1" {
+        if self.picture == "petf" {
             let photoVc = FaceViewController()
             photoVc.bidders = bidders
             photoVc.hardworking = hardworking
             getVc(photoVc)
-        }else if self.picture == "dcan2" {
+        }else if self.picture == "petg" {
             let personVc = PersonalViewController()
             personVc.bidders = bidders
             getVc(personVc)
-        }else if self.picture == "dcan3" {
+        }else if self.picture == "peth" {
             let conVc = ContractViewController()
             conVc.bidders = bidders
             getVc(conVc)
-        }else if self.picture == "dcan4" {
+        }else if self.picture == "peti" {
             let bankVc = BankViewController()
             bankVc.bidders = bidders
             getVc(bankVc)

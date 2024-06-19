@@ -144,7 +144,7 @@ class BankView: UIView ,UITableViewDataSource,UITableViewDelegate{
         let model: CravedModel = array[indexPath.row]
         let brickType = model.brick
         let cell = tableView.cellForRow(at: indexPath) as? CommonCell
-        if brickType == "rty" {//枚举
+        if brickType == "petj" {//枚举
             guard let modelArray = model.customers else { return }
             self.popEView(modelArray,model,cell!)
         }
@@ -168,7 +168,7 @@ class BankView: UIView ,UITableViewDataSource,UITableViewDelegate{
     
     @objc func sureClick() {
         var body: [String: Any] = self.array.reduce(into: [String: Any]()) { result, model in
-            if model.brick == "rty" {
+            if model.brick == "petj" {
                 result[model.awareness!] = model.lives
             }else {
                 result[model.awareness!] = model.saveStr

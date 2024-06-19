@@ -11,17 +11,17 @@ import DeviceKit
 class CommonParams: NSObject {
     
     static func getParas() -> String{
-        let dealt: String = "ios"
-        let tombstone: String = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
-        let bring: String = Device.current.name ?? ""
-        let trash: String = DeviceInfo.finely()
-        let pitched: String = DeviceInfo.column()
-        let decades: String = "app-flexi"
-        let seizes: String = USER_DEFAULTS.object(forKey: LOGIN_SEIZES) as? String ?? ""
-        let urgency: String = DeviceInfo.finely()
+        let snailZuc: String = "ios"
+        let seagullR: String = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
+        let jacketNi: String = Device.current.name ?? ""
+        let zucchini: String = DeviceInfo.finely()
+        let zuccwww: String = DeviceInfo.column()
+        let kiwiUgli: String = "app-flexi"
+        let inkMango: String = USER_DEFAULTS.object(forKey: LOGIN_SEIZES) as? String ?? ""
+        let xylophon: String = DeviceInfo.finely()
         let cleaved: String = "cat"
-        let pet_phone: String = seizes
-        let lastUrl: String = "dealt=\(dealt)&tombstone=\(tombstone)&bring=\(bring)&trash=\(trash)&pitched=\(pitched)&decades=\(decades)&seizes=\(seizes)&urgency=\(urgency)&cleaved=\(cleaved)&pet_phone=\(pet_phone)"
+        let pet_phone: String = inkMango
+        let lastUrl: String = "snailZuc=\(snailZuc)&seagullR=\(seagullR)&jacketNi=\(jacketNi)&zucchini=\(zucchini)&zuccwww=\(zuccwww)&kiwiUgli=\(kiwiUgli)&inkMango=\(inkMango)&xylophon=\(xylophon)&cleaved=\(cleaved)&pet_phone=\(pet_phone)"
         return lastUrl
     }
 }

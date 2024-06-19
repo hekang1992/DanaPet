@@ -30,7 +30,7 @@ class CManager: NSObject {
     }
     
     private static func schemeAndParameters(from string: String) -> (function: String?, parameters: [String: String]?) {
-        let scheme = "app.dcatan/"
+        let scheme = SCHEME_URL
         guard let range = string.range(of: scheme) else {
             print("Scheme is not present in the string.")
             return (nil, nil)
@@ -56,23 +56,23 @@ class CManager: NSObject {
         let funcStr = mapping.function
         let paramValue = mapping.parameters?.first?.value ?? ""
         let curVc = getCurrentUIVC()
-        if funcStr == "thinkingAreas" {
+        if funcStr == "petugliEggplantVanilla" {
             curVc?.tabBarController?.selectedIndex = 1
-        } else if funcStr == "himselfBlanket" {
+        } else if funcStr == "petwatermelonEggplantOnion" {
             curVc?.tabBarController?.selectedIndex = 0
-        } else if funcStr == "shirtingSouth" {
+        } else if funcStr == "petjideMangoJackfruit" {
             curVc?.navigationController?.pushViewController(LoginViewController(), animated: true)
-        } else if funcStr == "woodsHaving" {
+        } else if funcStr == "petpineappleRadishTangerine" {
             let orderVc = OrderViewController()
             orderVc.hideTabBar()
             orderVc.typeStr = paramValue
             curVc?.navigationController?.pushViewController(orderVc, animated: true)
-        } else if funcStr == "terrainShoot" {
+        } else if funcStr == "petumbrellaUgliJackfruit" {
             let jdVc = JDViewController()
             jdVc.hideTabBar()
             jdVc.bidders = paramValue
             curVc?.navigationController?.pushViewController(jdVc, animated: true)
-        } else if funcStr == "fiddledDollars" {
+        } else if funcStr == "petzebraVanillaFig" {
             
         } else {
             

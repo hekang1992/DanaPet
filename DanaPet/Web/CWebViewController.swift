@@ -15,15 +15,15 @@ class CWebViewController: BaseViewController, WKNavigationDelegate,WKScriptMessa
     lazy var webView: WKWebView = {
         let configuration = WKWebViewConfiguration()
         let userContentController = WKUserContentController()
-        userContentController.add(self, name: "likelihoodEvening")
-        userContentController.add(self, name: "quenchRealized")
-        userContentController.add(self, name: "askedThere")
-        userContentController.add(self, name: "fieldBelow")
-        userContentController.add(self, name: "shackledPenetrate")
-        userContentController.add(self, name: "tarzanDamned")
-        userContentController.add(self, name: "friendlyWagons")
-        userContentController.add(self, name: "detailUsed")
-        userContentController.add(self, name: "couldQuantities")
+        userContentController.add(self, name: "uploadRiskLoanPet")
+        userContentController.add(self, name: "openUrlPet")
+        userContentController.add(self, name: "closeSynPet")
+        userContentController.add(self, name: "jumpToHomePet")
+        userContentController.add(self, name: "callPhoneMethodPet")
+        userContentController.add(self, name: "toGradePet")
+        userContentController.add(self, name: "setNavExpansionPet")
+        userContentController.add(self, name: "setNavColorPet")
+        userContentController.add(self, name: "setBackModalPet")
         configuration.userContentController = userContentController
         let webView = WKWebView(frame: .zero, configuration: configuration)
         webView.translatesAutoresizingMaskIntoConstraints = false
@@ -88,21 +88,21 @@ class CWebViewController: BaseViewController, WKNavigationDelegate,WKScriptMessa
         let methodName = message.name
         let methodArgs = body ?? []        
         switch methodName {
-        case "likelihoodEvening":
+        case "uploadRiskLoanPet":
             uploadRiskLoan(methodArgs)
-        case "quenchRealized":
+        case "openUrlPet":
             openUrl(methodArgs)
-        case "askedThere":
+        case "closeSynPet":
             closeSyn()
-        case "fieldBelow":
+        case "jumpToHomePet":
             jumpToHome()
-        case "shackledPenetrate":
+        case "callPhoneMethodPet":
             callPhoneMethod(methodArgs)
-        case "tarzanDamned":
+        case "toGradePet":
             toGrade()
-        case "friendlyWagons":
+        case "setNavExpansionPet":
             setNavExpansion(methodArgs)
-        case "detailUsed":
+        case "setNavColorPet":
             setNavColor(methodArgs)
         default:
             print("Unknown method: \(methodName)")

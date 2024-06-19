@@ -29,7 +29,7 @@ class HoveredModel: HandyJSON {
     var lives: String?
     var decades: String?//appid
     var trapped: String?
-    var seizes: String?
+    var inkMango: String?
     var conjured: String?
     var pawed: String?
     var locked: String?

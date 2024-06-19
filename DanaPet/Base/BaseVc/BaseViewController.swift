@@ -160,22 +160,22 @@ class BaseViewController: UIViewController,UINavigationControllerDelegate {
     }
     
     func nextPushVc(_ picture: String,_ hardworking: String, _ bidders: String) {
-        if picture == "dcan1" {
+        if picture == "petf" {
             let photoVc = FaceViewController()
             photoVc.bidders = bidders
             photoVc.hardworking = hardworking
             getVc(photoVc)
-        }else if picture == "dcan2" {
+        }else if picture == "petg" {
             let personVc = PersonalViewController()
             personVc.bidders = bidders
             personVc.hardworking = hardworking
             getVc(personVc)
-        }else if picture == "dcan3" {
+        }else if picture == "peth" {
             let conVc = ContractViewController()
             conVc.bidders = bidders
             conVc.hardworking = hardworking
             getVc(conVc)
-        }else if picture == "dcan4" {
+        }else if picture == "peti" {
             let bankVc = BankViewController()
             bankVc.bidders = bidders
             bankVc.hardworking = hardworking

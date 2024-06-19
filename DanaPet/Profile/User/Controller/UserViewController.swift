@@ -95,7 +95,8 @@ class UserViewController: BaseViewController {
             let edges = model.edges
             if awess == 0 || awess == 00 {
                 SaveLoginInfo.removeLoginInfo()
-                CNotificationCenter.post(name: NSNotification.Name(SET_ROOTVC), object: nil)
+                let dict = ["cleaved":"cat"]
+                CNotificationCenter.post(name: NSNotification.Name(SET_ROOTVC), object: nil , userInfo: dict)
             }
             self?.removeHudView()
             MBProgressHUD.wj_showPlainText(edges ?? "", view: nil)
@@ -131,7 +132,8 @@ class UserViewController: BaseViewController {
             let edges = model.edges
             if awess == 0 || awess == 00 {
                 SaveLoginInfo.removeLoginInfo()
-                CNotificationCenter.post(name: NSNotification.Name(SET_ROOTVC), object: nil)
+                let dict = ["cleaved":"cat"]
+                CNotificationCenter.post(name: NSNotification.Name(SET_ROOTVC), object: nil , userInfo: dict)
             }
             self?.removeHudView()
             MBProgressHUD.wj_showPlainText(edges ?? "", view: nil)

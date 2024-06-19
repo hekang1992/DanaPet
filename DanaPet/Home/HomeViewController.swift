@@ -174,16 +174,16 @@ class HomeViewController: BaseViewController {
                 let smodel = inModel?.selling
                 self?.homeTwoView.smodel = smodel
                 if let model1 = inModel {
-                    if model1.lives == "yy" {//首页2
+                    if model1.lives == "pete" {//首页2
                         self?.homeOneView.isHidden = true
                         self?.homeTwoView.isHidden = false
-                        self?.largeDataModel = model1.incomes?.filter{ $0.lives == "yy" }.compactMap{ $0.drawing }.first ?? []
+                        self?.largeDataModel = model1.incomes?.filter{ $0.lives == "pete" }.compactMap{ $0.drawing }.first ?? []
                         if let modelArray = self?.largeDataModel {
                             self?.homeTwoView.type = model1.app_name
                             self?.homeTwoView.applogo = model1.app_logo
                             self?.homeTwoView.largeDataModel = modelArray
                         }
-                        self?.largeDataModel1 = model1.incomes?.filter{ $0.lives == "mm" }.compactMap{ $0.drawing }.first ?? []
+                        self?.largeDataModel1 = model1.incomes?.filter{ $0.lives == "peta" }.compactMap{ $0.drawing }.first ?? []
                         if let modelArray = self?.largeDataModel1 {
                             self?.homeTwoView.largeDataModel1 = modelArray
                         }
@@ -191,7 +191,7 @@ class HomeViewController: BaseViewController {
                     }else {
                         self?.homeOneView.isHidden = false
                         self?.homeTwoView.isHidden = true
-                        self?.largeDataModel = model1.incomes?.filter{ $0.lives == "nn" }.compactMap{ $0.drawing }.first ?? []
+                        self?.largeDataModel = model1.incomes?.filter{ $0.lives == "petb" }.compactMap{ $0.drawing }.first ?? []
                         if let modelArray = self?.largeDataModel {
                             self?.homeOneView.type = model1.app_name
                             self?.homeOneView.applogo = model1.app_logo

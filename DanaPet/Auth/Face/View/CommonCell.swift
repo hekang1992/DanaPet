@@ -90,7 +90,7 @@ class CommonCell: UITableViewCell {
             if !prime.isEmpty {
                 model.saveStr = model.prime
             }
-            if model.brick != "cty" {
+            if model.brick != "petk" {
                 self.textField1.isEnabled = false
                 self.iconImageView.isHidden = false
             }else{

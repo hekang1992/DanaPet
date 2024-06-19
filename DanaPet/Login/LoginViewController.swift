@@ -108,7 +108,7 @@ class LoginViewController: BaseViewController {
                 let loginModel = JSONDeserializer<HoveredModel>.deserializeFrom(dict: hovered)
                 guard let loginModel = loginModel else { return }
                 SaveLoginInfo.removeLoginInfo()
-                SaveLoginInfo.saveLoginInfo(loginModel.seizes ?? "", loginModel.postmaster ?? "")
+                SaveLoginInfo.saveLoginInfo(loginModel.inkMango ?? "", loginModel.postmaster ?? "")
                 let dict = ["cleaved":"cat"]
                 CNotificationCenter.post(name: NSNotification.Name(SET_ROOTVC), object: nil, userInfo: dict)
             }

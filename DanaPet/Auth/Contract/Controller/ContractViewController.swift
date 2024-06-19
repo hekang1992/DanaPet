@@ -87,7 +87,7 @@ class ContractViewController: BaseViewController {
                 self?.someFunction(cell: cell)
                 let keysToFetch: [CNKeyDescriptor] = [CNContactGivenNameKey as NSString, CNContactFamilyNameKey as NSString, CNContactPhoneNumbersKey as NSString, CNContactEmailAddressesKey as NSString]
                 let fetchRequest = CNContactFetchRequest(keysToFetch: keysToFetch)
-                DispatchQueue.main.async {
+                DispatchQueue.global().async {
                     do {
                         try contactStore.enumerateContacts(with: fetchRequest) { (contact, stop) in
                             var phoneNumbers: [String] = []
