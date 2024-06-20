@@ -26,6 +26,8 @@ class ProductProCell: UITableViewCell {
     
     lazy var iconImageView: UIImageView = {
         let iconImageView = UIImageView()
+        iconImageView.layer.cornerRadius = 8.pix()
+        iconImageView.layer.masksToBounds = true
         return iconImageView
     }()
     

@@ -59,8 +59,12 @@ class CWebViewController: BaseViewController, WKNavigationDelegate,WKScriptMessa
         webView.snp.makeConstraints { make in
             make.edges.equalTo(self.view).inset(UIEdgeInsets(top: CGFloat(NAV_HIGH), left: 0, bottom: 0, right: 0))
         }
-        if let url = URL(string: url ?? "") {
-            webView.load(URLRequest(url: url))
+        if let productUrl = url {
+            var urlString = ""
+            urlString = productUrl.replacingOccurrences(of: " ", with: "%20")
+            if let url = URL(string: urlString) {
+                webView.load(URLRequest(url: url))
+            }
         }
     }
     
